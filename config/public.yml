@@ -1,5 +1,4 @@
 default: &default
-
   app_options:
     # the version of this rails application
     version: 0.0.1
@@ -30,8 +29,9 @@ default: &default
     # SECTIONS
     # List of section names corresponding to YAML files in config/sections/
     # YAML file contains api_options and facets values applied section-wide
-    # sections:
-    #   - section_name
+    sections:
+      - monasteries
+      - religious_figures
 
   api_options:
     # example of default filter for all queries
@@ -74,28 +74,16 @@ default: &default
         label: Year
         flags:
           - search_filter
-      person.name:
-        label: People
+      title:
+        label: Name
         flags:
           - search_filter
-      languages:
-        label: Language
-        flags:
-          - search_filter
-      subcategory:
-        label: Subcategory
-        flags:
-          - search_filter
-      creator.name:
-        label: Creator
-        flags:
-          - search_filter
-      format:
-        label: Format
-        flags:
-          - search_filter
-      places:
+      spatial.name:
         label: Places
+        flags:
+          - search_filter
+      type:
+        label: Tibetan Buddhist tradition
         flags:
           - search_filter
 # Add fields for other languages with their language code

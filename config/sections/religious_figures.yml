@@ -1,0 +1,75 @@
+default: &default
+  api_options:
+    # only return section items by default
+    f:
+      - category|Religious figures
+    # sorting and response number
+    sort:
+      - date|asc
+    num: 50
+    # facet info on search page
+    facet_limit: 20
+    facet_sort: count|desc
+    # facet info on browse page
+    browse_sort: term|asc
+    # highlighting
+    hl_num: 5
+
+  facets:
+    en:
+      collection:
+        label: Collection
+        flags:
+          - search_filter
+      category:
+        label: Category
+        flags:
+          - search_filter
+      date_not_before.year:
+        label: Year of birth
+        flags:
+          - search_filter
+      date_not_after.year:
+        label: Year of death
+        flags:
+          - search_filter
+      type:
+        label: Tradition of Tibetan Buddhism
+        flags:
+          - search_filter
+      spatial.name:
+        label: Birthplace
+        flags:
+          - search_filter
+      rdf.object:
+        label: Associated monastery
+        flags:
+          - search_filter
+      rdf.predicate:
+        label: Role
+        flags:
+          - search_filter
+      rdf.source:
+        label: Associated teaching
+        flags:
+          - search_filter
+      figure_count_k:
+        label: Number of associated monasteries
+        flags:
+          - search_filter
+# Add fields for other languages with their language code
+#    es:
+#      category:
+#        label: Categoría
+#        flags:
+#          - search_filter
+#          - translate
+
+test:
+  <<: *default
+
+development:
+  <<: *default
+
+production:
+  <<: *default

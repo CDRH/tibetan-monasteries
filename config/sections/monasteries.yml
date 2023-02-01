@@ -1,0 +1,64 @@
+default: &default
+  api_options:
+    # only return section items by default
+    f:
+      - category|Monasteries
+    # sorting and response number
+    sort:
+      - date|asc
+    num: 50
+    # facet info on search page
+    facet_limit: 20
+    facet_sort: count|desc
+    # facet info on browse page
+    browse_sort: term|asc
+    # highlighting
+    hl_num: 5
+
+  facets:
+    en:
+      collection:
+        label: Collection
+        flags:
+          - search_filter
+      category:
+        label: Category
+        flags:
+          - search_filter
+      title:
+        label: Name
+        flags:
+          - search_filter
+      location.name:
+        label: Location
+        flags:
+          - search_filter
+      type:
+        label: Tradition of Tibetan Buddhism
+        flags:
+          - search_filter
+      rdf.subject:
+        label: Associated figures
+        flags:
+          - search_filter
+      figure_count_k:
+        label: Number of associated figures
+        flags:
+          - search_filter
+
+# Add fields for other languages with their language code
+#    es:
+#      category:
+#        label: Categoría
+#        flags:
+#          - search_filter
+#          - translate
+
+test:
+  <<: *default
+
+development:
+  <<: *default
+
+production:
+  <<: *default
