@@ -1,0 +1,40 @@
+<div class="metadata">
+  <h2>Figure Information</h2>
+  <h3>Lifespan</h3>
+  <% if @res["date_not_before"].present? %>
+    <% before_date = Date.parse(@res["date_not_before"])%>
+    <p>
+      <%= before_date.strftime("%Y") %> -
+      <% if @res["date_not_after"].present? &&  @res["date_not_after"] != @res["date_not_before"] %>
+        <% after_date = Date.parse(@res["date_not_after"])%>
+        <%= after_date.strftime("%Y") %>
+      <% end %>
+    </p>
+  <% end %>
+  <% if @res["type"].present? %>
+    <p>
+      <strong>Religious tradition: </strong><%= @res["type"] %>
+    </p>
+  <% end %>
+  <h3>Notes</h3>
+  <% if @res["description"].present? %>
+    <p>
+      <strong>Description: </strong><%= @res["description"] %>
+    </p>
+  <% end %>
+  
+  
+  <% if @res["rdf"].present? %>
+    <h2>Associated monasteries</h2>
+    <% @res["rdf"].each do |figure| %>
+      <% id = parse_md_parentheses(figure["object"]) %>
+      <% name = parse_md_brackets(figure["object"]) %>
+      <h3><%= link_to name, monasteries_item_path(id) %></h3>
+      <ul>
+        <li>Role: <%= figure["predicate"] %></li>
+        <li>Associated Teaching: <%= figure["source"] %></li>
+        <li>Story: <%= figure["note"] %></li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,26 @@
+<% if @res.present? && @res.count > 0 %>
+  <% @res.items.each do |item| %>
+    <div class="searchResults buffer-bottom-sm">
+      <h3><%= search_item_link(item) %></h3>
+      <div class="row">
+        <div class="<%= item["highlight"].present? ? "col-md-4" : "col-md-12" %> search_results_info">
+          <ul>
+            <%# TODO make sure arguments point to the correct place in the translation file %>
+            <% if item["date_display"].present? %>
+              <li>
+                <%= metadata(item, t("search.results.item.date",
+                  default: "Lifespan"), "date_display", link: false) %>
+              </li>
+            <% end %>
+            <% if item["type"].present? %>
+              <li>
+                <%= metadata(item, t("search.results.item.type",
+                  default: "Tradition of Tibetan Buddhism"), "type", link: false) %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

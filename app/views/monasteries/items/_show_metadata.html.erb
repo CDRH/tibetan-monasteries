@@ -1,0 +1,37 @@
+<div class="metadata">
+  <h2>Monastery Information</h2>
+  <% if @res["date"].present? %>
+    <% date = Date.parse(@res["date"])%>
+    <p>
+      <strong>Founding Date:</strong> <%= date.strftime("%B %-d, %Y") %>
+    </p>
+  <% end %>
+  <% if @res["type"].present? %>
+    <p>
+      <strong>Religious tradition: </strong><%= @res["type"] %>
+    </p>
+  <% end %>
+  <% if @res["spatial"].present? %>
+    <p>
+      <strong>Location: </strong><%= @res["spatial"]["name"] %>
+    </p>
+  <% end %>
+  <% if @res["description"].present? %>
+    <p>
+      <strong>Description: </strong><%= @res["description"] %>
+    </p>
+  <% end %>
+  <% if @res["rdf"].present? %>
+    <h2>Associated figures</h2>
+    <% @res["rdf"].each do |figure| %>
+      <% id = parse_md_parentheses(figure["subject"]) %>
+      <% name = parse_md_brackets(figure["subject"]) %>
+      <h3><%= link_to name, religious_figures_item_path(id) %></h3>
+      <ul>
+        <li>Role: <%= figure["predicate"] %></li>
+        <li>Associated Teaching: <%= figure["source"] %></li>
+        <li>Story: <%= figure["note"] %></li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
