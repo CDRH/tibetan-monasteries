@@ -1,9 +1,8 @@
 <div class="metadata">
   <h2>Monastery Information</h2>
-  <% if @res["date"].present? %>
-    <% date = Date.parse(@res["date"])%>
+  <% if @res["date_display"].present? %>
     <p>
-      <strong>Founding Date:</strong> <%= date.strftime("%B %-d, %Y") %>
+      <strong>Founding Date:</strong> <%= @res["date_display"] %>
     </p>
   <% end %>
   <% if @res["type"].present? %>
@@ -22,11 +21,12 @@
     </p>
   <% end %>
   <% if @res["rdf"].present? %>
-    <h2>Associated figures</h2>
-    <% @res["rdf"].each do |figure| %>
+    <h3>Associated figures</h3>
+    <% figures = @res["rdf"].select { |i| i["predicate"] != "sameAs" } %>
+    <% figures.each do |figure| %>
       <% id = parse_md_parentheses(figure["subject"]) %>
       <% name = parse_md_brackets(figure["subject"]) %>
-      <h3><%= link_to name, religious_figures_item_path(id) %></h3>
+      <h4><%= link_to name, religious_figures_item_path(id) %></h4>
       <ul>
         <li>Role: <%= figure["predicate"] %></li>
         <li>Associated Teaching: <%= figure["source"] %></li>

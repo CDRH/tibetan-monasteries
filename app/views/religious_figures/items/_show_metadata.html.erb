@@ -1,9 +1,8 @@
 <div class="metadata">
-  <h2>Figure Information</h2>
-  <h3>Lifespan</h3>
   <% if @res["date_not_before"].present? %>
     <% before_date = Date.parse(@res["date_not_before"])%>
     <p>
+      <strong>Lifespan:</strong>
       <%= before_date.strftime("%Y") %> -
       <% if @res["date_not_after"].present? &&  @res["date_not_after"] != @res["date_not_before"] %>
         <% after_date = Date.parse(@res["date_not_after"])%>
@@ -16,24 +15,28 @@
       <strong>Religious tradition: </strong><%= @res["type"] %>
     </p>
   <% end %>
-  <h3>Notes</h3>
   <% if @res["description"].present? %>
     <p>
       <strong>Description: </strong><%= @res["description"] %>
     </p>
   <% end %>
-  
+  <h3>External links</h3>
+  <% links = @res["rdf"].select { |i| i["predicate"] == "sameAs" } %>
+  <% links.each do |link| %>
+    <p><%= link["source"] %>: <%= link_to @res["relation"], link["object"] %></p>
+  <% end %>
   
   <% if @res["rdf"].present? %>
-    <h2>Associated monasteries</h2>
-    <% @res["rdf"].each do |figure| %>
-      <% id = parse_md_parentheses(figure["object"]) %>
-      <% name = parse_md_brackets(figure["object"]) %>
-      <h3><%= link_to name, monasteries_item_path(id) %></h3>
+    <h3>Associated monasteries</h3>
+    <% monasteries = @res["rdf"].select { |i| i["predicate"] != "sameAs" } %>
+    <% monasteries.each do |monastery| %>
+      <% id = parse_md_parentheses(monastery["object"]) %>
+      <% name = parse_md_brackets(monastery["object"]) %>
+      <h4><%= link_to name, monasteries_item_path(id) %></h4>
       <ul>
-        <li>Role: <%= figure["predicate"] %></li>
-        <li>Associated Teaching: <%= figure["source"] %></li>
-        <li>Story: <%= figure["note"] %></li>
+        <li>Role: <%= monastery["predicate"] %></li>
+        <li>Associated Teaching: <%= monastery["source"] %></li>
+        <li>Story: <%= monastery["note"] %></li>
       </ul>
     <% end %>
   <% end %>
