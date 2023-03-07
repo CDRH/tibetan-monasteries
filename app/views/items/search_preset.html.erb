@@ -26,7 +26,7 @@ to docs/search_preset.md %>
       </h2>
       <%= render_overridable("items", "clear_facets") %>
     </div>
-    <%= render_overridable("items", "facets", facets: res.facets) %>
+    <%= render_overridable("items", "facets", facets: @res.facets) %>
   </div> <%# col-md-3 %>
   <div class="col-sm-9">
     <%= render_overridable "items", "summary_boxes" %>
