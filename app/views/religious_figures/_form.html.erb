@@ -1,0 +1,47 @@
+<%= form_tag(religious_figures_update_path, method: :put) do %>
+  <%# byebug %>
+  <%= label_tag "title", "name of monastery" %>
+  <%= text_field_tag "title", figure["title"] %>
+  <br>
+  <%= label_tag "date_not_before", "birth date" %>
+  <%= text_field_tag "date_not_before", figure["date_not_before"] %>
+  <br>
+  <%= label_tag "date_not_after", "death date" %>
+  <%= text_field_tag "date_not_after", figure["date_not_after"] %>
+  <br>
+  <%= label_tag "spatial_name", "birthplace" %>
+  <%= text_field_tag "spatial_name", figure["spatial"]["name"] %>
+  <br>
+  <%= label_tag "description", "description" %>
+  <%= text_area_tag "description", figure["description"]  %>
+  <br>
+  <%= label_tag "relation", "BDRC number" %>
+  <%= text_field_tag "relation", figure["relation"]  %>
+  <br>
+  <h3>Asoociated figtures</h3>
+  <% figure["rdf"].each_with_index do |monastery, index| %>
+    <% if monastery["predicate"] != "sameAs" %>
+      <% name = parse_md_brackets(monastery["object"]) %>
+      <% id = parse_md_parentheses(monastery["object"]) %>
+      <h4><%= name %></h4>
+      <br>
+      <%= label_tag "name_#{index}", "name of monastery" %>
+      <%= text_field_tag "name_#{index}", name %>
+      <br>
+      <%= label_tag "id_#{index}", "monastery ID (please check for consistency)" %>
+      <%= text_field_tag "id_#{index}", id %>
+      <br>
+      <%= label_tag "predicate_#{index}", "role" %>
+      <%= text_field_tag "predicate_#{index}", monastery["predicate"] %>
+      <%= hidden_field_tag "object_#{index}", figure["name"] %>
+      <br>
+      <%= label_tag "source_#{index}", "associated teachings" %>
+      <%= text_field_tag "source_#{index}", monastery["source"] %>
+      <br>
+      <%= label_tag "note_#{index}", "note" %>
+      <%= text_area_tag "note_#{index}", monastery["note"] %>
+    <% end %>
+  <% end %>
+  <%= hidden_field_tag "figure", figure.to_json %>
+  <%= submit_tag %>
+<% end %>

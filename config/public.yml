@@ -62,10 +62,6 @@ default: &default
 
   facets:
     en:
-      collection:
-        label: Collection
-        flags:
-          - search_filter
       category:
         label: Category
         flags:
@@ -86,6 +82,11 @@ default: &default
         label: Tibetan Buddhist tradition
         flags:
           - search_filter
+      count_k:
+        label: Number of associated items
+        flags:
+          - search_filter
+
 # Add fields for other languages with their language code
 #    es:
 #      category:
@@ -93,6 +94,8 @@ default: &default
 #        flags:
 #          - search_filter
 #          - translate
+es_path: http://localhost:9200
+es_index: tibetanmonasteries
 
 test:
   <<: *default
