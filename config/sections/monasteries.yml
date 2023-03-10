@@ -17,14 +17,6 @@ default: &default
 
   facets:
     en:
-      collection:
-        label: Collection
-        flags:
-          - search_filter
-      category:
-        label: Category
-        flags:
-          - search_filter
       title:
         label: Name
         flags:
