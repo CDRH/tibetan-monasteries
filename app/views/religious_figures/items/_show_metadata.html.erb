@@ -10,6 +10,11 @@
       <% end %>
     </p>
   <% end %>
+    <% if @res["spatial"].present? %>
+    <p>
+      <strong>Birthplace: </strong><%= @res["spatial"]["name"] %>
+    </p>
+  <% end %>
   <% if @res["type"].present? %>
     <p>
       <strong>Religious tradition: </strong><%= @res["type"] %>
