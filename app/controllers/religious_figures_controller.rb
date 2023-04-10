@@ -1,6 +1,9 @@
 class ReligiousFiguresController < ItemsController
-  require "rest-client"
   
+  require "rest-client"
+  include DateHelper
+  include ApplicationHelper
+
   def index
     # optional settings
     @title = t "religious_figures.title"
@@ -16,7 +19,7 @@ class ReligiousFiguresController < ItemsController
     # render search preset with route information
     @route_path = "home_path"
     @facet_limit = @section.present? ? SECTIONS[@section]["api_options"]["facet_limit"] : PUBLIC["api_options"]["facet_limit"]
-    render_overridable "items", "search_preset", locals: { res: @res}
+    render_overridable("items", "search_preset", false)
   end
 
   def edit
@@ -32,7 +35,7 @@ class ReligiousFiguresController < ItemsController
     else
       @title = t "item.no_item", id: id,
         default: "No item with identifier #{id} found!"
-      render_overridable("items", "show_not_found", status: 404)
+      render_overridable("items", "show_not_found", false, status: 404)
     end
   end
 
@@ -71,6 +74,31 @@ class ReligiousFiguresController < ItemsController
     index_url = File.join(@options["es_path"], @options["es_index"])
     RestClient.put("#{index_url}/_doc/#{id}", json.to_json, auth_header.merge({:content_type => :json }) )
     redirect_to religious_figures_item_path(id)
+  end
+
+  def new
+    id = generate_id
+    @res = {
+      "title" => "",
+      "date_not_before" => "",
+      "date_not_after" => "",
+      "spatial" => {
+        "name" => ""
+      },
+      "description" => "",
+      "relation" => "",
+      "rdf" => []
+    }
+    render "religious_figures/new"
+  end
+
+  def create
+  end
+
+  private
+
+  def generate_id
+
   end
 
 end

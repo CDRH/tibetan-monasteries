@@ -1,5 +1,9 @@
 class MonasteriesController < ItemsController
+  
   require "rest-client"
+  include DateHelper
+  include ApplicationHelper
+
   def index
     # optional settings
     @title = t "monasteries.title"
@@ -15,7 +19,25 @@ class MonasteriesController < ItemsController
     # render search preset with route information
     @route_path = "home_path"
     @facet_limit = @section.present? ? SECTIONS[@section]["api_options"]["facet_limit"] : PUBLIC["api_options"]["facet_limit"]
-    render_overridable  "items", "search_preset", res: @res
+    render_overridable  "items", "search_preset", false, res: @res
+  end
+
+  def new
+    id = params[:id]
+    @res = {
+      "title" => "",
+      "date_display" => "",
+      "spatial" => {
+        "name" => ""
+      },
+      "description" => "",
+      "relation" => "",
+      "rdf" => []
+    }
+    render "monasteries/new"
+  end
+
+  def create
   end
 
   def edit
@@ -31,7 +53,7 @@ class MonasteriesController < ItemsController
     else
       @title = t "item.no_item", id: id,
         default: "No item with identifier #{id} found!"
-      render_overridable("items", "show_not_found", status: 404)
+      render_overridable("items", "show_not_found", false, status: 404)
     end
   end
 
@@ -69,6 +91,12 @@ class MonasteriesController < ItemsController
     index_url = File.join(@options["es_path"], @options["es_index"])
     RestClient.put("#{index_url}/_doc/#{id}", json.to_json, auth_header.merge({:content_type => :json }) )
     redirect_to monasteries_item_path(id)
+  end
+
+  private
+
+  def generate_id
+    
   end
 
 end
