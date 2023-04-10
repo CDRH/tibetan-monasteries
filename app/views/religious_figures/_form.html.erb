@@ -1,4 +1,4 @@
-<%= form_tag(religious_figures_update_path, method: :put) do %>
+<%= form_tag(path, method: :put) do %>
   <%# byebug %>
   <%= label_tag "title", "name of monastery" %>
   <%= text_field_tag "title", figure["title"] %>
@@ -18,7 +18,7 @@
   <%= label_tag "relation", "BDRC number" %>
   <%= text_field_tag "relation", figure["relation"]  %>
   <br>
-  <h3>Asoociated figtures</h3>
+  <h3>Associated monasteries</h3>
   <% figure["rdf"].each_with_index do |monastery, index| %>
     <% if monastery["predicate"] != "sameAs" %>
       <% name = parse_md_brackets(monastery["object"]) %>
