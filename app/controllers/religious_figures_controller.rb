@@ -87,12 +87,57 @@ class ReligiousFiguresController < ItemsController
       },
       "description" => "",
       "relation" => "",
-      "rdf" => []
+      "rdf" => [
+        {
+          "subject" => "",
+          "object" => "",
+          "predicate" => "",
+          "source" => "",
+          "note" => ""
+        }
+      ]
     }
     render "religious_figures/new"
   end
 
   def create
+    json = JSON.parse(params[:figure])
+    id = generate_id
+    json["identifier"] = id
+    json["collection"] = "tibetan_monasteries"
+    json["collection_desc"] = "tibetan_monasteries"
+    json["category"] = "Religious Figures"
+    json["description"] = params[:description]
+    json["title"] = params[:title]
+    json["date_not_before"] = date_standardize(params[:date_not_before], false)
+    json["date_not_after"] = date_standardize(params[:date_not_afterr], false)
+    json["spatial"]["name"] = params[:spatial_name]
+    json["relation"] = params[:relation]
+    rdf = []
+    idx = 0
+    # loop through all the numbered keys
+    while params.has_key?("id_#{idx}") && params["id_#{idx}"].length > 0
+      figure = {"object" => params[:title]}
+      name = params["name_#{idx}"]
+      fig_id = params["id_#{idx}"]
+      figure["subject"] = "[#{name}](#{fig_id})"
+      figure["predicate"] = params["predicate_#{idx}"]
+      figure["source"] = params["source_#{idx}"]
+      figure["note"] = params["note_#{idx}"]
+      rdf << figure
+      idx += 1
+    end
+    json["rdf"] = rdf
+    # below should be refactored into more general helper methods
+    project_dir = File.join(File.dirname(__FILE__), "..", "..")
+    # path to the gem's config files
+    general_config_path = File.join(project_dir, "config")
+    # at some point I also need to factor into environments, private.yml for passwords
+    @options = read_config("#{general_config_path}/public.yml")
+    #auth_header = construct_auth_header(@options)
+    index_url = File.join(@options["es_path"], @options["es_index"])
+    RestClient.put("#{index_url}/_doc/#{id}", json.to_json, {:content_type => :json } )
+    redirect_to religious_figures_item_path(id)
   end
 
   private
