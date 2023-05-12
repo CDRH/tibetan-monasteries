@@ -132,9 +132,9 @@ class MonasteriesController < ItemsController
     general_config_path = File.join(project_dir, "config")
     # at some point I also need to factor into environments, private.yml for passwords
     @options = read_config("#{general_config_path}/public.yml")
-    auth_header = construct_auth_header(@options)
+    #auth_header = construct_auth_header(@options)
     index_url = File.join(@options["es_path"], @options["es_index"])
-    RestClient.put("#{index_url}/_doc/#{id}", json.to_json, auth_header.merge({:content_type => :json }) )
+    RestClient.put("#{index_url}/_doc/#{id}", json.to_json, {:content_type => :json } )
     redirect_to monasteries_item_path(id)
   end
 
