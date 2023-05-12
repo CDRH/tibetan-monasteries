@@ -1,6 +1,5 @@
 <%= form_tag(path, method: :put) do %>
-  <%# byebug %>
-  <%= label_tag "title", "name of monastery" %>
+  <%= label_tag "title", "name of religious figure" %>
   <%= text_field_tag "title", figure["title"] %>
   <br>
   <%= label_tag "date_not_before", "birth date" %>
