@@ -114,7 +114,7 @@ class MonasteriesController < ItemsController
     rdf = []
     idx = 0
     # loop through all the numbered keys
-    while params.has_key?("name_#{idx}")
+    while params.has_key?("id_#{idx}") && params["id_#{idx}"].length > 0
       figure = {"object" => params[:title]}
       name = params["name_#{idx}"]
       fig_id = params["id_#{idx}"]
