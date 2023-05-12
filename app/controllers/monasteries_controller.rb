@@ -23,7 +23,7 @@ class MonasteriesController < ItemsController
   end
 
   def new
-    id = params[:id]
+    id = generate_id
     @res = {
       "title" => "",
       "date_display" => "",
@@ -96,7 +96,13 @@ class MonasteriesController < ItemsController
   private
 
   def generate_id
-    
+    #query api and determine nubmer of items
+    options = {
+      "f" => ["category|Monasteries"]
+    }
+    @res = @items_api.query(options)
+    count = @res.count
+    "mon_#{count + 1}"
   end
 
 end

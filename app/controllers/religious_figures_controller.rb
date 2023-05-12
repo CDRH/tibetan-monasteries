@@ -98,7 +98,13 @@ class ReligiousFiguresController < ItemsController
   private
 
   def generate_id
-
+    #query api and determine nubmer of items
+    options = {
+      "f" => ["category|Religious Figures"]
+    }
+    @res = @items_api.query(options)
+    count = @res.count
+    "fig_#{count + 1}"
   end
 
 end
