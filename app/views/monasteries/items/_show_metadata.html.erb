@@ -26,7 +26,13 @@
     <% figures.each do |figure| %>
       <% id = parse_md_parentheses(figure["subject"]) %>
       <% name = parse_md_brackets(figure["subject"]) %>
-      <h4><%= link_to name, religious_figures_item_path(id) %></h4>
+      <h4>
+        <% if id %>
+          <%= link_to name, religious_figures_item_path(id) %>
+        <% else %>
+          <%= name %>
+        <% end %>
+      </h4>
       <ul>
         <li>Role: <%= figure["predicate"] %></li>
         <li>Associated Teaching: <%= figure["source"] %></li>

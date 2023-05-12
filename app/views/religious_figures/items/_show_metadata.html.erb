@@ -37,7 +37,13 @@
     <% monasteries.each do |monastery| %>
       <% id = parse_md_parentheses(monastery["object"]) %>
       <% name = parse_md_brackets(monastery["object"]) %>
-      <h4><%= link_to name, monasteries_item_path(id) %></h4>
+      <h4>
+        <% if name %>
+          <%= link_to name, monasteries_item_path(id) %>
+        <% else %>
+          <%= name %>
+        <% end%>
+      </h4>
       <ul>
         <li>Role: <%= monastery["predicate"] %></li>
         <li>Associated Teaching: <%= monastery["source"] %></li>
