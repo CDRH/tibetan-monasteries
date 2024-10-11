@@ -40,7 +40,7 @@ if APP_OPTS.key?("sections")
   APP_OPTS["sections"].each do |name|
     config_path = Rails.root.join("config", "sections", "#{name}.yml")
 
-    if File.exists?(config_path)
+    if File.exist?(config_path)
       SECTIONS[name] = YAML.load_file(config_path, aliases: true)[Rails.env]
       SECTIONS[name]["name"] = name
     else
