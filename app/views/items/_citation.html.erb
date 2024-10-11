@@ -1,0 +1,9 @@
+
+<p>
+    <% if author && publisher != "BDRC" %>
+        <% lastname = author.split(" ").last %>
+        <% firstname = author.split(" ")[0..-1].join(" ") %>
+        <%= lastname %>, <%= firstname %>. 
+    <% end %>
+    "<%= title %>." <cite><%= publisher %></cite>, <%= Date.parse(date).year %>, <%= link_to nil, page_url %>. Accessed <%= accessed %>
+</p>
