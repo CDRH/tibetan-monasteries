@@ -33,34 +33,7 @@ en:
     # it's recommended that you override it in your config/locales files. If your about
     # page is more involved, please override the about.html.erb template entirely
     contents_html: |-
-      <p>To edit the contents of this page, please open config/locales/en.yml
-      and alter "contents_html",
-      or override about.html.erb in your local application.</p>
-      <p>And now, a few words from Star Trek:</p>
-      <p>Damage report! Now we know what they mean by 'advanced' tactical
-      training. Is it my imagination, or have tempers become a little frayed on
-      the ship lately?
-      You did exactly what you had to do. You considered all your options, you
-      tried every alternative and then you made the hard choice.
-      In all trust, there is the possibility for betrayal. Earl Grey tea,
-      watercress sandwiches... and Bularian canapés? Are you up for promotion?
-      Wait a minute - you've been declared dead. You can't give orders around
-      here. Some days you get the bear, and some days the bear gets you.
-      Maybe if we felt any human loss as keenly as we feel one of those close
-      to us, human history would be far less bloody.</p>
-      <p>The Enterprise computer system is controlled by three primary main
-      processor cores, cross-linked with a redundant melacortz ramistat,
-      fourteen kiloquad interface modules.
-      Well, that's certainly good to know. Well, I'll say this for him - he's
-      sure of himself. Maybe we better talk out here; the observation lounge
-      has turned into a swamp.
-      A lot of things can change in twelve years, Admiral. Computer, belay that
-      order. Congratulations - you just destroyed the Enterprise.
-      Ensign Babyface! Did you come here for something in particular or just
-      general Riker-bashing? Fear is the true enemy, the only enemy.
-      I will obey your orders. I will serve this ship as First Officer. And in
-      an attack against the Enterprise, I will die with this crew. But I will
-      not break my oath of loyalty to Starfleet.</p>
+      <h3>Copyright</h3><p>This site makes extensive use of metadata from BDRC and Treasury of Lives. Both of these organizations have released into the public domain under the <a href="https://creativecommons.org/public-domain/cc0/">CC0 license</a>. See <a href=https://treasuryoflives.org/terms>Treasury of Live's terms of use</a> and BDRC entries which note that their metadata has been released as CC0.  (However, Treasury of Lives biographies are copyright of the owners and cannot be reproduced without permission.)</p>
 
   ##########
   # BROWSE #
