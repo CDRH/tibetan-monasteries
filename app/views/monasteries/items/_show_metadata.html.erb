@@ -40,4 +40,15 @@
       </ul>
     <% end %>
   <% end %>
+  <h3>Citation</h3>
+  <% Array.wrap(@res["citation"]).each_with_index do |citation, idx| %>
+    <%= render partial: "citation", locals: { 
+      author: @res["creator"]["name"], 
+      title: citation["name"], 
+      date: citation["date"], 
+      publisher: citation["publisher"],
+      page_url: @res["rights_uri"][idx],
+      accessed: @res["date_accessed_k"] 
+      } %>
+  <% end %>
 </div>
