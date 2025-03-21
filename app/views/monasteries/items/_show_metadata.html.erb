@@ -12,7 +12,7 @@
   <% end %>
   <% if @res["spatial"].present? %>
     <p>
-      <strong>Location: </strong><%= @res["spatial"]["name"] %>
+      <strong>Location: </strong><%= @res["spatial"]["name"] %> (coords: <%= @res["spatial"]["coordinates"]["lat"] %> N, <%= @res["spatial"]["coordinates"]["lon"] %> E)
     </p>
   <% end %>
   <% if @res["description"].present? %>
