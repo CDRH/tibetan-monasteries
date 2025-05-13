@@ -47,11 +47,18 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  # Local changes for secure HTTPS config
+  #   Can be toggled off with env var for local production env testing
+  config.force_ssl = ENV['RAILS_PROD_NOSSL'].blank?
+  #   Handle STS here instead of Apache, or Rails duplicates header contents
+  #   Also unset cache-control header in HTTPS vhost for same reason
+  config.ssl_options = { hsts: { preload: true } }
 
-  # Use the lowest log level to ensure availability of diagnostic information
-  # when problems arise.
-  config.log_level = :debug
+  # Include generic and useful information about system operation, but avoid logging too much
+  # information to avoid inadvertent exposure of personally identifiable information (PII).
+  # Local change to reduce log bloat
+  config.log_level = :warn
+
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
