@@ -47,7 +47,7 @@
   <% Array.wrap(@res["citation"]).each_with_index do |citation, idx| %>
     <%= render partial: "citation", locals: { 
       author: @res["creator"]["name"], 
-      title: citation["name"], 
+      title: citation["title"], 
       date: citation["date"], 
       publisher: citation["publisher"],
       page_url: @res["rights_uri"][idx],
