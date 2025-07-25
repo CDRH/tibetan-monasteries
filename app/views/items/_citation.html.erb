@@ -5,7 +5,7 @@
         <% firstname = author.split(" ")[0..-1].join(" ") %>
         <%= lastname %>, <%= firstname %>. 
     <% end %>
-    "<%= title %>." <cite><%= publisher %></cite><%=(", " + Date.parse(date).year) if year %>, <%= link_to nil, page_url %>. 
+    "<%= title %>." <cite><%= publisher %></cite><%=(", " + Date.parse(date).year.to_s) if date %>, <%= link_to nil, page_url %>. 
     <% if accessed %>
       Accessed <%= accessed %>
     <% end %>
