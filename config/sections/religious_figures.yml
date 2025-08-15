@@ -45,7 +45,7 @@ default: &default
         label: Associated teaching
         flags:
           - search_filter
-      figure_count_k:
+      monastery_count_k:
         label: Number of associated monasteries
         flags:
           - search_filter
