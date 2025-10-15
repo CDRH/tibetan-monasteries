@@ -82,7 +82,7 @@ default: &default
         label: Tibetan Buddhist tradition
         flags:
           - search_filter
-      count_k:
+      figure_count_k:
         label: Number of associated items
         flags:
           - search_filter
