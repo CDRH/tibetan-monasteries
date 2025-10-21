@@ -57,11 +57,11 @@ $font-family-tibetan: "Noto Serif Tibetan", sans-serif;
 }
 
 .noto-serif-display {
-  font-family: "Noto Serif Display", $font-family-serif;
+  font-family: "Noto Serif Display", "Noto Serif", Georgia, "Times New Roman", Times, serif;
 }
 
 .devanagari-font {
-  font-family: $font-family-devanagari;
+  font-family: "Noto Serif Devanagari", sans-serif;
 }
 
 .tibetan-font {
