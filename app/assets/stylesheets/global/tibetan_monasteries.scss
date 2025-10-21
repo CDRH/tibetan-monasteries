@@ -1,4 +1,4 @@
-// Custom Colors
+// Theme Colors
 
 $tm-red: rgb(168, 25, 36);
 $tm-red-rgb: 168, 25, 36;
@@ -41,13 +41,31 @@ $prayer-flag-red-rgb: 214, 47, 39;
 $prayer-flag-green-rgb: 15, 128, 64;
 $prayer-flag-yellow-rgb: 248, 235, 32;
 
-// Fonts
+// Additional Fonts
 
-$font-family-serif: "Noto Serif", Georgia, "Times New Roman", Times, serif;
-$font-family-sans-serif: "Noto Sans", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
-$headings-font-family: "Noto Serif Display", $font-family-serif;
 $font-family-devanagari: "Noto Serif Devanagari", sans-serif;
 $font-family-tibetan: "Noto Serif Tibetan", sans-serif;
-$font-family-base:  $font-family-serif !default;
+
+// Utility Classes: Fonts
+
+.noto-serif {
+  font-family: "Noto Serif", Georgia, "Times New Roman", Times, serif;
+}
+
+.noto-sans {
+  font-family:  "Noto Sans", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+}
+
+.noto-serif-display {
+  font-family: "Noto Serif Display", $font-family-serif;
+}
+
+.devanagari-font {
+  font-family: $font-family-devanagari;
+}
+
+.tibetan-font {
+  font-family: "Noto Serif Tibetan", sans-serif;
+}
 
 
