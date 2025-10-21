@@ -26,15 +26,16 @@ $brand-danger:          #6F787B !default; //gray
 
 $nav-accent:            #f8f8f8 !default;
 
+$body-color:            #262424 !default;
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               $light-base !default;
+$body-bg:               white !default;
 //** Global text color on `<body>`.
-$text-color:            $gray-darker !default;
+$text-color:            $body-color !default;
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
