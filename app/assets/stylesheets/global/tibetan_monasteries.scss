@@ -115,9 +115,6 @@ $font-family-tibetan: "Noto Serif Tibetan", sans-serif;
   --font-family-tibetan: "Noto Serif Tibetan", sans-serif;
 }
 
-
-
-
 // Utility Classes: Fonts
 
 $font-family-headings: "Noto Serif Display", "Noto Serif", Georgia, "Times New Roman", Times, serif;
@@ -142,105 +139,77 @@ $font-family-headings: "Noto Serif Display", "Noto Serif", Georgia, "Times New R
   font-family: "Noto Serif Tibetan", sans-serif;
 }
 
-// Silk Gradients 
 
-.silk-90 {
-  background: #9C1720;
-  background: linear-gradient(90deg,
-  rgba(156, 23, 32, 1) 0%,
-  rgba(168, 25, 36, 1) 42%,
-  rgba(107, 17, 17, 1) 54%,
-  rgba(168, 25, 36, 1) 62%,
-  rgba(156, 23, 32, 1) 65%,
-  rgba(107, 17, 17, 1) 71%,
-  rgba(168, 25, 36, 1) 76%,
-  rgba(168, 25, 36, 1) 79%,
-  rgba(107, 17, 17, 1) 85%,
-  rgba(168, 25, 36, 1) 88%,
-  rgba(168, 25, 36, 1) 90%,
-  rgba(107, 17, 17, 1) 96%,
-  rgba(168, 25, 36, 1) 98%,
-  rgba(168, 25, 36, 1) 99%,
-  rgba(107, 17, 17, 1) 100%);
+// Header
+
+body {
+  border-top: 1px solid #959595;
 }
 
+// Header variables
 
-.silk-127 {
-  background: #9C1720;
-  background: linear-gradient(127deg,
-  rgba(156, 23, 32, 1) 0%,
-  rgba(168, 25, 36, 1) 42%,
-  rgba(107, 17, 17, 1) 54%,
-  rgba(168, 25, 36, 1) 62%,
-  rgba(156, 23, 32, 1) 65%,
-  rgba(107, 17, 17, 1) 71%,
-  rgba(168, 25, 36, 1) 76%,
-  rgba(168, 25, 36, 1) 79%,
-  rgba(107, 17, 17, 1) 85%,
-  rgba(168, 25, 36, 1) 88%,
-  rgba(168, 25, 36, 1) 90%,
-  rgba(107, 17, 17, 1) 96%,
-  rgba(168, 25, 36, 1) 98%,
-  rgba(168, 25, 36, 1) 99%,
-  rgba(107, 17, 17, 1) 100%);
-}
-
-:root {
-  --silk-bg: #9C1720;
-  --silk-127: linear-gradient(127deg,
-  rgba(156, 23, 32, 1) 0%,
-  rgba(168, 25, 36, 1) 42%,
-  rgba(107, 17, 17, 1) 54%,
-  rgba(168, 25, 36, 1) 62%,
-  rgba(156, 23, 32, 1) 65%,
-  rgba(107, 17, 17, 1) 71%,
-  rgba(168, 25, 36, 1) 76%,
-  rgba(168, 25, 36, 1) 79%,
-  rgba(107, 17, 17, 1) 85%,
-  rgba(168, 25, 36, 1) 88%,
-  rgba(168, 25, 36, 1) 90%,
-  rgba(107, 17, 17, 1) 96%,
-  rgba(168, 25, 36, 1) 98%,
-  rgba(168, 25, 36, 1) 99%,
-  rgba(107, 17, 17, 1) 100%);
-}
-
-// Site header w/ silk
-
-// header {
-//   background: var(--silk-bg);
-//   background: var(--silk-127);
-// }
-
-// header .h1 {
-//   color: var(--tm-gold);
-//   display: flex;
-//   flex-direction: column;
-//   text-shadow: 1px 1px 1px
-//   rgba(0,0,0,0.5);
-// }
-
-// .site-title {
-//   color: rgb(240, 197, 114);
-// }
-
-// #header .h1 small {
-//   color: var(--tm-gold);
-// }
+$temple-border-color: $temple-white;
+$temple-border-width: 12px;
+$temple-border-width-mobile: 8px;
+$temple-header-height: 150px;
+$temple-header-height-mobile: 100px;
 
 .temple-header {
-  background: $temple-red;
-  border-bottom: 12px solid $temple-white;
   display: flex;
   flex-direction: column-reverse;
 
   .site-title-container {
-    box-shadow: inset 0px 8px 8px -8px rgba(0,0,0,0.75), inset 0px -8px 8px -8px rgba(0,0,0,0.75); // inset 0px 0px 5px black;
 
-    > .container {
+    .temple-decoration:before {
+      content: '';
+      background: $temple-red; // darken($temple-red, 8%);
+      border-bottom: $temple-border-width solid $temple-border-color;
+      border-left: $temple-border-width solid $temple-border-color;
+      box-shadow: inset 0px -8px 6px -10px rgba(0,0,0,0.75), inset 0px 8px 6px -10px rgba(0,0,0,0.75), inset 8px 0px 6px -10px;
+      position: absolute;
+      left: 0;
+      height: $temple-header-height;
+      width: 100%;
+      z-index: -2;
+    }
+
+    .temple-decoration:after {
+      content: '';
+      background: $tm-gray-lighter;
+      position: absolute;
+      height: $temple-header-height;
+      right: 0;
+      width: 60%;
+      z-index: -1;
+        box-shadow: inset 0px 0px 12px -5px rgba(0,0,0,0.75);
+      // box-shadow: inset 0px -8px 6px -10px rgba(0,0,0,0.75), inset 0px 8px 6px -10px rgba(0,0,0,0.75), inset 8px 0px 6px -10px;
+
+    }
+
+    .temple-decoration {
+      // background-image: image-url('temple-decoration.svg');
+      // background-position: right;
+      // background-repeat: no-repeat;
       display: flex;
-      align-items: center;
-      min-height: 150px;
+      height: $temple-header-height;
+
+      > .site-title-block {
+        align-self: center;
+        background: $temple-red;
+        border-bottom: $temple-border-width solid $temple-border-color;
+        //border-left: $temple-border-width solid $temple-border-color;
+        // box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.5);
+        box-shadow: inset 0px -8px 6px -10px rgba(0,0,0,0.75), inset 0px 8px 6px -10px rgba(0,0,0,0.75);
+        flex-shrink: 0;
+        height: 100%;
+        margin-right: -4px;
+        padding-right: 10px;
+        padding-top: 29px;
+      }
+
+      > img {
+        height: $temple-header-height;
+      }
     }
 
     .h1 {
@@ -265,12 +234,19 @@ $font-family-headings: "Noto Serif Display", "Noto Serif", Georgia, "Times New R
 
   // Main Menu
 
+  // box-shadow top only: inset 0px 8px 6px -8px rgba(0,0,0,0.75)
+  // box-shadow bottom only: inset 0px -8px 6px -8px rgba(0,0,0,0.75)
+
   .navbar-default {
-    border-top: 12px solid $temple-white;
-    border-bottom: 12px solid $temple-white;
+    border-bottom: $temple-border-width solid $temple-border-color;
+    border-left: none;
+    border-right: none;
+    border-top: $temple-border-width solid $temple-border-color;
     box-shadow: inset 0px 8px 6px -8px rgba(0,0,0,0.75), inset 0px -8px 6px -8px rgba(0,0,0,0.75); // inset 0px 0px 5px black;
 
     .navbar-nav {
+      background: $temple-blue;
+
       li {
         
         &.active a {
@@ -287,4 +263,213 @@ $font-family-headings: "Noto Serif Display", "Noto Serif", Georgia, "Times New R
       }
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+  .temple-header {
+    .navbar-default {
+      border-bottom-width: $temple-border-width-mobile;
+      border-top-width: $temple-border-width-mobile;
+
+      .container {
+        padding: 0;
+      }
+
+      .navbar-collapse {
+        background: $temple-border-color;
+        border: 0;
+        border-top: 1px solid #253560;
+        // border-top: $temple-border-width-mobile solid $temple-border-color;
+      }
+
+      .navbar-nav {
+        margin: 0;
+      }
+    }
+
+     .site-title-container .container {
+      padding-left: 0;
+
+      .temple-decoration:before,
+      .temple-decoration:after, 
+      .temple-decoration,
+      .temple-decoration > img {
+        height: $temple-header-height-mobile;
+      }
+
+      .temple-decoration > .site-title-block {
+        border-bottom-width: $temple-border-width-mobile;
+        border-left-width:  $temple-border-width-mobile;
+        padding-left: 15px;
+        padding-top: 15px;
+      }
+
+      .h1 {
+        font-size: 32px;
+      }
+    } 
+  }
+}
+
+
+// .corbels {
+//   background-image: image-url('corbels-green.svg');
+//   height: 36px;
+// }
+
+$temple-green: #3d915b;
+$corbel-height: 24px; // 30px;
+
+// .corbels {
+//   height: $corbel-height;
+//   position: relative;
+//   width: 100%;
+  
+//   // squares
+//   background: conic-gradient(
+//     $temple-green 90deg,
+//     transparent 90deg 180deg,
+//     $temple-green 180deg 270deg,
+//     transparent 270deg
+//   );
+
+//   background-repeat: repeat;
+//   background-size: 40px 40px;
+//   background-position: bottom left;
+//   border-top: $temple-border-width solid $temple-green;
+//   box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75);
+// }
+
+// .corbels:after {
+//   content: '';
+//   position: absolute;
+//   box-shadow: inset 0px 4px 6px -8px rgba(0, 0, 0, 0.75);
+//   left: 0;
+//   height: $corbel-height;
+//   top: $temple-border-width * -1;
+//   width: 100%;
+// }
+
+// Try #2
+
+.corbels {
+  border-top: 4px solid #5ea176; // lighten($temple-green, 3%);
+  opacity: 0.95;
+}
+
+.corbel-border {
+  height: $corbel-height;
+  position: relative;
+  width: 100%;
+
+  background-image: image-url('corbel.svg');
+  background-repeat: repeat-x;
+  border-top: $temple-border-width solid $temple-green;
+  box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75);
+}
+
+.corbel-border:after {
+  content: '';
+  position: absolute;
+  box-shadow: inset 0px 4px 6px -8px rgba(0, 0, 0, 0.75);
+  left: 0;
+  height: $corbel-height;
+  top: $temple-border-width * -1;
+  width: 100%;
+}
+
+
+// Silk Gradients 
+
+// .silk-90 {
+//   background: #9C1720;
+//   background: linear-gradient(90deg,
+//   rgba(156, 23, 32, 1) 0%,
+//   rgba(168, 25, 36, 1) 42%,
+//   rgba(107, 17, 17, 1) 54%,
+//   rgba(168, 25, 36, 1) 62%,
+//   rgba(156, 23, 32, 1) 65%,
+//   rgba(107, 17, 17, 1) 71%,
+//   rgba(168, 25, 36, 1) 76%,
+//   rgba(168, 25, 36, 1) 79%,
+//   rgba(107, 17, 17, 1) 85%,
+//   rgba(168, 25, 36, 1) 88%,
+//   rgba(168, 25, 36, 1) 90%,
+//   rgba(107, 17, 17, 1) 96%,
+//   rgba(168, 25, 36, 1) 98%,
+//   rgba(168, 25, 36, 1) 99%,
+//   rgba(107, 17, 17, 1) 100%);
+// }
+
+
+// .silk-127 {
+//   background: #9C1720;
+//   background: linear-gradient(127deg,
+//   rgba(156, 23, 32, 1) 0%,
+//   rgba(168, 25, 36, 1) 42%,
+//   rgba(107, 17, 17, 1) 54%,
+//   rgba(168, 25, 36, 1) 62%,
+//   rgba(156, 23, 32, 1) 65%,
+//   rgba(107, 17, 17, 1) 71%,
+//   rgba(168, 25, 36, 1) 76%,
+//   rgba(168, 25, 36, 1) 79%,
+//   rgba(107, 17, 17, 1) 85%,
+//   rgba(168, 25, 36, 1) 88%,
+//   rgba(168, 25, 36, 1) 90%,
+//   rgba(107, 17, 17, 1) 96%,
+//   rgba(168, 25, 36, 1) 98%,
+//   rgba(168, 25, 36, 1) 99%,
+//   rgba(107, 17, 17, 1) 100%);
+// }
+
+// :root {
+//   --silk-bg: #9C1720;
+//   --silk-127: linear-gradient(127deg,
+//   rgba(156, 23, 32, 1) 0%,
+//   rgba(168, 25, 36, 1) 42%,
+//   rgba(107, 17, 17, 1) 54%,
+//   rgba(168, 25, 36, 1) 62%,
+//   rgba(156, 23, 32, 1) 65%,
+//   rgba(107, 17, 17, 1) 71%,
+//   rgba(168, 25, 36, 1) 76%,
+//   rgba(168, 25, 36, 1) 79%,
+//   rgba(107, 17, 17, 1) 85%,
+//   rgba(168, 25, 36, 1) 88%,
+//   rgba(168, 25, 36, 1) 90%,
+//   rgba(107, 17, 17, 1) 96%,
+//   rgba(168, 25, 36, 1) 98%,
+//   rgba(168, 25, 36, 1) 99%,
+//   rgba(107, 17, 17, 1) 100%);
+// }
+
+
+
+// Site header w/ silk
+
+// header {
+//   background: var(--silk-bg);
+//   background: var(--silk-127);
+// }
+
+// header .h1 {
+//   color: var(--tm-gold);
+//   display: flex;
+//   flex-direction: column;
+//   text-shadow: 1px 1px 1px
+//   rgba(0,0,0,0.5);
+// }
+
+// .site-title {
+//   color: rgb(240, 197, 114);
+// }
+
+// #header .h1 small {
+//   color: var(--tm-gold);
+// }
+
+$font-family-sans-serif:  "Noto Sans", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+
+.navbar-default {
+  font-family: $font-family-sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
