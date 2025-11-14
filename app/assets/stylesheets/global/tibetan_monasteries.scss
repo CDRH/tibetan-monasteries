@@ -1,4 +1,13 @@
+
 // Theme Colors
+
+$temple-blue: rgb(70, 86, 128); // #465680
+$temple-blue-dark: rgb(59, 74, 113); // 3b4a71
+$temple-blue-darker: rgb(37, 53, 96); // #253560
+
+$temple-red: rgb(187, 58, 58); // #BB3A3A
+
+$temple-white: rgb(255, 251, 252); // #fffbfc;
 
 $tm-red: rgb(168, 25, 36);
 $tm-red-rgb: 168, 25, 36;
@@ -41,12 +50,77 @@ $prayer-flag-red-rgb: 214, 47, 39;
 $prayer-flag-green-rgb: 15, 128, 64;
 $prayer-flag-yellow-rgb: 248, 235, 32;
 
+// CSS variables
+
+:root {
+
+  --tm-red: rgb(168, 25, 36);
+  --tm-red-rgb: 168, 25, 36;
+  --tm-red-dark: rgb(107, 17, 17);
+  --tm-red-dark-rgb: 107, 17, 17;
+
+  --tm-gold: rgb(248, 199, 53);
+  --tm-gold-rgb: 248, 199, 53;
+  --tm-dark-gold: rgb(223, 156, 13);
+  --tm-dark-gold-rgb: 223, 156, 13;
+
+  --tm-copper: rgb(205, 116, 48);
+  --tm-copper-rgb: 205, 116, 48;
+
+  --tm-jade: rgb(46, 132, 81);
+  --tm-jade-rgb: 46, 132, 81;
+  --tm-jade-dark: rgb(17, 79, 48);
+  --tm-jade-dark-rgb: 17, 79, 48;
+  --tm-jade-light: rgb(193, 209, 195);
+  --tm-jade-light-rgb: 193, 209, 195;
+
+  --tm-blue: rgb(31, 79, 156);
+  --tm-blue-rgb: 31, 79, 156;
+  --tm-blue-dark: rgb(21, 50, 97);
+  --tm-blue-dark-rgb: 21, 50, 97;
+  --tm-blue-light: rgb(209, 222, 245);
+  --tm-blue-light-rgb: 209, 222, 245;
+
+  --tm-gray-dark: rgb(64, 60, 60);
+  --tm-gray-dark-rgb: 64, 60, 60;
+  --tm-gray: rgb(102, 102, 12);
+  --tm-gray-rgb: 102, 102, 12;
+  --tm-gray-light: rgb(165, 156, 156);
+  --tm-gray-light-rgb: 165, 156, 156;
+  --tm-gray-lighter: rgb(226, 223, 223);
+  --tm-gray-lighter-rgb: 226, 223, 223;
+
+  --prayer-flag-blue-rgb: 30, 68, 151;
+  --prayer-flag-red-rgb: 214, 47, 39;
+  --prayer-flag-green-rgb: 15, 128, 64;
+  --prayer-flag-yellow-rgb: 248, 235, 32;
+
+// Gradients
+
+--tm-red-gradient-bg: var(--tm-red-dark);
+--tm-red-gradient: linear-gradient(90deg,
+  rgba(107, 17, 17, 1) 0%,
+  rgba(168, 25, 36, 1) 100%);
+}
+
+
 // Additional Fonts
 
 $font-family-devanagari: "Noto Serif Devanagari", sans-serif;
 $font-family-tibetan: "Noto Serif Tibetan", sans-serif;
 
+
+:root {
+  --font-family-devanagari: "Noto Serif Devanagari", sans-serif;
+  --font-family-tibetan: "Noto Serif Tibetan", sans-serif;
+}
+
+
+
+
 // Utility Classes: Fonts
+
+$font-family-headings: "Noto Serif Display", "Noto Serif", Georgia, "Times New Roman", Times, serif;
 
 .noto-serif {
   font-family: "Noto Serif", Georgia, "Times New Roman", Times, serif;
@@ -68,4 +142,149 @@ $font-family-tibetan: "Noto Serif Tibetan", sans-serif;
   font-family: "Noto Serif Tibetan", sans-serif;
 }
 
+// Silk Gradients 
 
+.silk-90 {
+  background: #9C1720;
+  background: linear-gradient(90deg,
+  rgba(156, 23, 32, 1) 0%,
+  rgba(168, 25, 36, 1) 42%,
+  rgba(107, 17, 17, 1) 54%,
+  rgba(168, 25, 36, 1) 62%,
+  rgba(156, 23, 32, 1) 65%,
+  rgba(107, 17, 17, 1) 71%,
+  rgba(168, 25, 36, 1) 76%,
+  rgba(168, 25, 36, 1) 79%,
+  rgba(107, 17, 17, 1) 85%,
+  rgba(168, 25, 36, 1) 88%,
+  rgba(168, 25, 36, 1) 90%,
+  rgba(107, 17, 17, 1) 96%,
+  rgba(168, 25, 36, 1) 98%,
+  rgba(168, 25, 36, 1) 99%,
+  rgba(107, 17, 17, 1) 100%);
+}
+
+
+.silk-127 {
+  background: #9C1720;
+  background: linear-gradient(127deg,
+  rgba(156, 23, 32, 1) 0%,
+  rgba(168, 25, 36, 1) 42%,
+  rgba(107, 17, 17, 1) 54%,
+  rgba(168, 25, 36, 1) 62%,
+  rgba(156, 23, 32, 1) 65%,
+  rgba(107, 17, 17, 1) 71%,
+  rgba(168, 25, 36, 1) 76%,
+  rgba(168, 25, 36, 1) 79%,
+  rgba(107, 17, 17, 1) 85%,
+  rgba(168, 25, 36, 1) 88%,
+  rgba(168, 25, 36, 1) 90%,
+  rgba(107, 17, 17, 1) 96%,
+  rgba(168, 25, 36, 1) 98%,
+  rgba(168, 25, 36, 1) 99%,
+  rgba(107, 17, 17, 1) 100%);
+}
+
+:root {
+  --silk-bg: #9C1720;
+  --silk-127: linear-gradient(127deg,
+  rgba(156, 23, 32, 1) 0%,
+  rgba(168, 25, 36, 1) 42%,
+  rgba(107, 17, 17, 1) 54%,
+  rgba(168, 25, 36, 1) 62%,
+  rgba(156, 23, 32, 1) 65%,
+  rgba(107, 17, 17, 1) 71%,
+  rgba(168, 25, 36, 1) 76%,
+  rgba(168, 25, 36, 1) 79%,
+  rgba(107, 17, 17, 1) 85%,
+  rgba(168, 25, 36, 1) 88%,
+  rgba(168, 25, 36, 1) 90%,
+  rgba(107, 17, 17, 1) 96%,
+  rgba(168, 25, 36, 1) 98%,
+  rgba(168, 25, 36, 1) 99%,
+  rgba(107, 17, 17, 1) 100%);
+}
+
+// Site header w/ silk
+
+// header {
+//   background: var(--silk-bg);
+//   background: var(--silk-127);
+// }
+
+// header .h1 {
+//   color: var(--tm-gold);
+//   display: flex;
+//   flex-direction: column;
+//   text-shadow: 1px 1px 1px
+//   rgba(0,0,0,0.5);
+// }
+
+// .site-title {
+//   color: rgb(240, 197, 114);
+// }
+
+// #header .h1 small {
+//   color: var(--tm-gold);
+// }
+
+.temple-header {
+  background: $temple-red;
+  border-bottom: 12px solid $temple-white;
+  display: flex;
+  flex-direction: column-reverse;
+
+  .site-title-container {
+    box-shadow: inset 0px 8px 8px -8px rgba(0,0,0,0.75), inset 0px -8px 8px -8px rgba(0,0,0,0.75); // inset 0px 0px 5px black;
+
+    > .container {
+      display: flex;
+      align-items: center;
+      min-height: 150px;
+    }
+
+    .h1 {
+      display: inline-block;
+      margin: 0;
+      text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+
+      > * {
+        display: block;
+      }
+    }
+
+    a,
+    .h1 small {
+      color: $temple-white;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Main Menu
+
+  .navbar-default {
+    border-top: 12px solid $temple-white;
+    border-bottom: 12px solid $temple-white;
+    box-shadow: inset 0px 8px 6px -8px rgba(0,0,0,0.75), inset 0px -8px 6px -8px rgba(0,0,0,0.75); // inset 0px 0px 5px black;
+
+    .navbar-nav {
+      li {
+        
+        &.active a {
+          box-shadow: inset 0px 0px 1px black;
+
+          &:hover {
+            background-color: $temple-blue-dark;
+          }
+        }
+
+        > a:hover {
+          box-shadow: inset 0px 0px 9px #1c1f26;
+        }
+      }
+    }
+  }
+}
