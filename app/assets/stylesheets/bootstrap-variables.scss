@@ -32,6 +32,14 @@ $temple-blue: #465680; // rgb(61, 76, 115);
 $temple-blue-dark: #3b4a71;
 $temple-blue-darker: #253560;
 
+$temple-brown: #553b34;
+
+$temple-green: #3d915b;
+
+$temple-red: rgb(187, 58, 58); // #BB3A3A
+
+$temple-white: rgb(255, 251, 252); // #fffbfc;
+
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -77,7 +85,7 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    "Noto Serif Display", "Noto Serif", Georgia, "Times New Roman", Times, serif;
-$headings-font-weight:    400 !default;
+$headings-font-weight:    600 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
 
