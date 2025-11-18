@@ -1,59 +1,5 @@
 @import "../bootstrap-variables";
 
-// Theme Colors
-
-$temple-blue: rgb(70, 86, 128);
-$temple-blue-dark: rgb(59, 74, 113);
-$temple-blue-darker: rgb(37, 53, 96);
-$temple-brown: #553b34;
-$temple-brown-dark: #4a3630;
-$temple-brown-light: #6e554f;
-$temple-green: #3d915b;
-$temple-green-dark: #2f794a;
-$temple-red: rgb(187, 58, 58); 
-$temple-white: rgb(255, 251, 252);
-
-$tm-red: rgb(168, 25, 36);
-$tm-red-rgb: 168, 25, 36;
-$tm-red-dark: rgb(107, 17, 17);
-$tm-red-dark-rgb: 107, 17, 17;
-
-$tm-gold: rgb(248, 199, 53);
-$tm-gold-rgb: 248, 199, 53;
-$tm-dark-gold: rgb(223, 156, 13);
-$tm-dark-gold-rgb: 223, 156, 13;
-
-$tm-copper: rgb(205, 116, 48);
-$tm-copper-rgb: 205, 116, 48;
-
-$tm-jade: rgb(46, 132, 81);
-$tm-jade-rgb: 46, 132, 81;
-$tm-jade-dark: rgb(17, 79, 48);
-$tm-jade-dark-rgb: 17, 79, 48;
-$tm-jade-light: rgb(193, 209, 195);
-$tm-jade-light-rgb: 193, 209, 195;
-
-$tm-blue: rgb(31, 79, 156);
-$tm-blue-rgb: 31, 79, 156;
-$tm-blue-dark: rgb(21, 50, 97);
-$tm-blue-dark-rgb: 21, 50, 97;
-$tm-blue-light: rgb(209, 222, 245);
-$tm-blue-light-rgb: 209, 222, 245;
-
-$tm-gray-dark: rgb(64, 60, 60);
-$tm-gray-dark-rgb: 64, 60, 60;
-$tm-gray: rgb(102, 102, 12);
-$tm-gray-rgb: 102, 102, 12;
-$tm-gray-light: rgb(165, 156, 156);
-$tm-gray-light-rgb: 165, 156, 156;
-$tm-gray-lighter: rgb(226, 223, 223);
-$tm-gray-lighter-rgb: 226, 223, 223;
-
-$prayer-flag-blue-rgb: 30, 68, 151;
-$prayer-flag-red-rgb: 214, 47, 39;
-$prayer-flag-green-rgb: 15, 128, 64;
-$prayer-flag-yellow-rgb: 248, 235, 32;
-
 // CSS variables
 
 :root {
@@ -107,11 +53,7 @@ $prayer-flag-yellow-rgb: 248, 235, 32;
   rgba(168, 25, 36, 1) 100%);
 }
 
-
 // Additional Language Fonts
-
-$font-family-devanagari: "Noto Serif Devanagari", sans-serif;
-$font-family-tibetan: "Noto Serif Tibetan", sans-serif;
 
 :root {
   --font-family-devanagari: "Noto Serif Devanagari", sans-serif;
