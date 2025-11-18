@@ -93,6 +93,7 @@ body {
 
 $temple-border-color: $temple-white;
 $temple-border-width: 12px;
+$temple-border-width-sm: 8px;
 $temple-border-width-mobile: 8px;
 $temple-header-height: 150px;
 $temple-header-height-mobile: 100px;
@@ -104,28 +105,31 @@ $temple-header-height-mobile: 100px;
 
   .site-title-container {
 
+    // Red half
     .temple-decoration:before {
       content: '';
       background: $temple-red; // darken($temple-red, 8%);
       border-bottom: $temple-border-width solid $temple-border-color;
       border-left: $temple-border-width solid $temple-border-color;
-      box-shadow: inset 0px -3px 1px -3px rgba(0,0,0,0.5), inset 0px 3px 1px -3px rgba(0,0,0,0.5), inset 3px 0px 1px -3px;
+      box-shadow: inset 0px -3px 1px -3px rgba(0, 0, 0, 0.5), inset 0px 3px 1px -3px rgba(0, 0, 0, 0.5), inset 3px 0px 1px -3px, -10px 8px 6px -8px rgba(0,0,0,0.75);
       height: $temple-header-height;
       left: 0;
       position: absolute;
-      width: 100%;
-      z-index: -2;
+      max-width: 512px;
+      width: 50%;
+      z-index: -1;
     }
 
+    // Gray half
     .temple-decoration:after {
       content: '';
       background: $tm-gray-lighter;
-      box-shadow: inset 0px 0px 16px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0px 10px 24px -24px rgba(0, 0, 0, 0.25);
       height: $temple-header-height;
       position: absolute;
       right: 0;
       width: 60%;
-      z-index: -1;
+      z-index: -6;
 
     }
 
@@ -137,11 +141,11 @@ $temple-header-height-mobile: 100px;
         align-self: center;
         background: $temple-red;
         border-bottom: $temple-border-width solid $temple-border-color;
-        box-shadow: inset 0px -3px 1px -3px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0px -3px 1px -3px rgba(0, 0, 0, 0.5), 10px -3px 6px 3px rgba(0,0,0,0.5); 
+        // box-shadow: inset 0px -3px 1px -3px rgba(0, 0, 0, 0.5), 6px 0px 8px 0px rgba(0, 0, 0, 0.5);
         flex-shrink: 0;
         height: 100%;
         margin-right: -4px;
-        padding-right: 16px;
         padding-top: 36px;
       }
 
@@ -189,6 +193,47 @@ $temple-header-height-mobile: 100px;
     }
   }
 
+  .temple-base {
+    background: $temple-brown;
+    border-top: 3px solid $temple-brown-light;
+    margin-top: -3px;
+    position: relative;
+    $temple-base-height: 50px;
+    z-index: -5;
+
+    .green-block {
+      --green-block-width: 455px;
+
+      background: $temple-green;
+      border: $temple-border-width-sm solid $temple-border-color;
+      border-left: none;
+      border-radius: 0px 0px 5px 0px;
+      border-top: none;
+      box-shadow: inset 0px -3px 1px -3px rgba(0, 0, 0, 0.5), inset -3px 0px 1px -3px rgba(0, 0, 0, 0.5);
+
+      // box-shadow: inset 0px -3px 1px -3px rgba(0, 0, 0, 0.5), 8px 0px 6px -8px rgba(0,0,0,0.5);
+      height: $temple-base-height;
+      margin-top: -3px;
+      width: var(--green-block-width);
+    }
+
+    .green-block:before {
+      content: '';
+      background: $temple-green; // darken($temple-red, 8%);
+      border-bottom: $temple-border-width-sm solid $temple-border-color;
+      border-left: $temple-border-width-sm solid $temple-border-color;
+      border-top: 3px solid $temple-brown-light;
+      box-shadow: inset 0px -3px 1px -3px rgba(0, 0, 0, 0.5), inset 3px 0px 1px -3px rgba(0,0,0,0.5);
+      // box-shadow: inset 0px -3px 1px -3px rgba(0,0,0,0.5), inset 0px 3px 1px -3px rgba(0,0,0,0.5), inset 3px 0px 1px -3px;
+      height: $temple-base-height;
+      left: 0;
+      position: absolute;
+      width: 40%;
+      z-index: -5;
+    }
+
+  }
+
   // Main Menu
 
   .navbar-default {
@@ -204,6 +249,10 @@ $temple-header-height-mobile: 100px;
 
     .navbar-nav {
       background: $temple-blue;
+
+      li {
+        box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75), inset 0px -8px 6px -8px rgba(0, 0, 0, 0.75)
+      }
 
       li {
         
@@ -258,13 +307,58 @@ $temple-header-height-mobile: 100px;
         border-bottom-width: $temple-border-width-mobile;
         border-left-width:  $temple-border-width-mobile;
         padding-left: 15px;
-        padding-top: 15px;
+        padding-top: 23px;
       }
 
       .h1 {
-        font-size: 32px;
+        font-size: 28px;
       }
     } 
+
+    .temple-base {
+      .green-block {
+        width: 335px;
+      }
+
+      .green-block:before {
+        border-left: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .temple-header .site-title-container {
+    .temple-decoration .site-title-block {
+      border-left: $temple-border-width solid $temple-border-color;
+      border-radius: 0px 0px 0px 5px;
+      box-shadow: inset 0px -3px 1px -3px rgba(0, 0, 0, 0.5), 6px 0px 8px 0px rgba(0, 0, 0, 0.75);
+      margin-left: -50px;
+      padding-left: 50px; 
+    }
+
+    .temple-base .green-block {
+      border-left: $temple-border-width solid $temple-border-color;
+      border-radius: 0px 0px 5px 5px;
+      margin-left: -38px;
+      padding-left: 50px;
+      width: calc(var(--green-block-width) + 50px)
+    }
+
+    .temple-decoration:before {
+      background: $temple-brown;
+      border: none;
+      box-shadow: none;
+      max-width: initial;
+      width: 40%;
+    }
+
+    .temple-base .green-block:before {
+      background: $temple-brown;
+      border: none;
+      border-top: 6px solid #5e4640;
+      box-shadow: none;
+    }
   }
 }
 
@@ -329,3 +423,12 @@ body:after {
     margin: 0;
   }
 }
+
+
+
+// Inset borders 
+
+// Top: inset 0px 8px 6px -8px rgba(0,0,0,0.75)
+// Left: inset 8px 0px 6px -8px rgba(0,0,0,0.75)
+// Right: inset -8px 0px 6px -8px rgba(0,0,0,0.75)
+// Bottom: inset 0px -8px 6px -8px rgba(0,0,0,0.75)
