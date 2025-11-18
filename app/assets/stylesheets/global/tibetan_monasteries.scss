@@ -1,3 +1,5 @@
+@import "../bootstrap-variables";
+
 // Theme Colors
 
 $temple-blue: rgb(70, 86, 128);
@@ -106,11 +108,10 @@ $prayer-flag-yellow-rgb: 248, 235, 32;
 }
 
 
-// Additional Fonts
+// Additional Language Fonts
 
 $font-family-devanagari: "Noto Serif Devanagari", sans-serif;
 $font-family-tibetan: "Noto Serif Tibetan", sans-serif;
-
 
 :root {
   --font-family-devanagari: "Noto Serif Devanagari", sans-serif;
@@ -118,8 +119,6 @@ $font-family-tibetan: "Noto Serif Tibetan", sans-serif;
 }
 
 // Utility Classes: Fonts
-
-$font-family-headings: "Noto Serif Display", "Noto Serif", Georgia, "Times New Roman", Times, serif;
 
 .noto-serif {
   font-family: "Noto Serif", Georgia, "Times New Roman", Times, serif;
