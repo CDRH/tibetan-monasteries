@@ -4,9 +4,9 @@
       <div class="site-title-block">
         <%= link_to home_path do %>
           <div class="h1">
-            <% if I18n.exists?("general.project_name", locale) %>
+            <% if I18n.exists?("general.project_shortname", locale) %>
               <span class="site-title">
-                <%= t "general.project_name", default: "Add project name to locale file" %>
+                <%= t "general.project_shortname", default: "Add project name to locale file" %>
               </span>
             <% end %>
             <% if I18n.exists?("general.project_subtitle", locale) %>

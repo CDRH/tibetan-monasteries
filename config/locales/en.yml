@@ -17,9 +17,9 @@ en:
     close: Close
 
     # Header title
-    project_name: Tibetan Monasteries
+    project_name: "Tibetan Monasteries: Religious and Institutional Networks"
     # <title>, meta application-name
-    project_shortname: tibetanmonasteries
+    project_shortname: Tibetan Monasteries
     # Header subtitle
     project_subtitle: Religious and Institutional Networks
 
@@ -33,7 +33,7 @@ en:
     # it's recommended that you override it in your config/locales files. If your about
     # page is more involved, please override the about.html.erb template entirely
     contents_html: |-
-      <h3>Forthcoming research in network analysis</h3><p>The Tibetan monastic system forms a transnational web between local monasteries, national institutions like the Geluk monastic seats, monasteries in other Himalayan states, and rulers and practitioners of other Asian countries. My network analysis to show how networks of practice and scholarship transcended sectarian boundaries. I am considering different network analysis tools including Gephi visualizations and the Neo4j graph database.  They can show the density of connections, identify the most central monasteries, and break out interesting characteristics (like geographical location). These tools will be used to analyze the interpersonal and monastic networks of the four great traditions and the cross-cutting Rimé movement. I will compare the traditions in terms of their geographic spread and transnationality.</p><h3>Copyright</h3><p>This site makes extensive use of metadata from BDRC and Treasury of Lives. Both of these organizations have released into the public domain under the <a href="https://creativecommons.org/public-domain/cc0/">CC0 license</a>. See <a href=https://treasuryoflives.org/terms>Treasury of Live's terms of use</a> and BDRC entries which note that their metadata has been released as CC0.  (However, Treasury of Lives biographies are copyright of the owners and cannot be reproduced without permission.)</p>
+      <h2 class="h3">Forthcoming research in network analysis</h2><p>The Tibetan monastic system forms a transnational web between local monasteries, national institutions like the Geluk monastic seats, monasteries in other Himalayan states, and rulers and practitioners of other Asian countries. My network analysis to show how networks of practice and scholarship transcended sectarian boundaries. I am considering different network analysis tools including Gephi visualizations and the Neo4j graph database.  They can show the density of connections, identify the most central monasteries, and break out interesting characteristics (like geographical location). These tools will be used to analyze the interpersonal and monastic networks of the four great traditions and the cross-cutting Rimé movement. I will compare the traditions in terms of their geographic spread and transnationality.</p><h2 class="h3">Copyright</h2><p>This site makes extensive use of metadata from BDRC and Treasury of Lives. Both of these organizations have released into the public domain under the <a href="https://creativecommons.org/public-domain/cc0/">CC0 license</a>. See <a href=https://treasuryoflives.org/terms>Treasury of Live's terms of use</a> and BDRC entries which note that their metadata has been released as CC0.  (However, Treasury of Lives biographies are copyright of the owners and cannot be reproduced without permission.)</p>
 
   ##########
   # BROWSE #
