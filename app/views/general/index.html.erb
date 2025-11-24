@@ -1,5 +1,11 @@
-<%# set title here, it will be pulled into the _contents view 
-    title will usually be pulled from the locales file %>
-    <% @title = t "home.greeting" %>
-
-<p>This project intends to explore the relationships between Tibetan Buddhist religious figures and monasteries and map the social and geographic networks among them. Like many religions, Tibetan Buddhism is divided into sectarian traditions, which differ in practice, philosophy, organization, and history. Their political and educational institutions have historically centered on specific monasteries. For instance the Dalai Lama’s Geluk tradition centered on Ganden, Drepung, and Sera. Prominent religious figures studied and taught at monasteries of their own tradition, but this is not the only relationship figures had with monasteries. Religious figures often visited monasteries of different traditions if they had a reputation for philosophy or certain ritual practices, so their education and influence might span multiple traditions. Monasteries were also centers of pilgrimage and seats of political influence. </p>
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-sm-6 col-sm-push-6 col-lg-8 col-lg-push-4">
+      <h1 class="h1 page-title"><%= t "home.greeting" %>
+      </h1>
+      <p>This project intends to explore the relationships between Tibetan Buddhist religious figures and monasteries and map the social and geographic networks among them. Like many religions, Tibetan Buddhism is divided into sectarian traditions, which differ in practice, philosophy, organization, and history. Their political and educational institutions have historically centered on specific monasteries. For instance the Dalai Lama’s Geluk tradition centered on Ganden, Drepung, and Sera. Prominent religious figures studied and taught at monasteries of their own tradition, but this is not the only relationship figures had with monasteries. Religious figures often visited monasteries of different traditions if they had a reputation for philosophy or certain ritual practices, so their education and influence might span multiple traditions. Monasteries were also centers of pilgrimage and seats of political influence. </p>
+  </div>
+  <div class="col-sm-6 col-sm-pull-6 col-lg-4 col-lg-pull-8 pt-3">
+    <%= image_tag 'padma-samye-chokhor-ling.jpg', alt: "Lhaden Chenmo Tibetan Monastery" %>
+  </div>
+</div>

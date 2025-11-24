@@ -1,1 +1,10 @@
+<div class="text-wrapper">
+    <h1 class="h1 page-title">
+      <% if @title != nil %>
+        <%= sanitize @title %>
+      <% else %>
+        About
+      <% end %>
+    </h1>
 <%= t "about.contents_html" %>
+</div>

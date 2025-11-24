@@ -1,36 +1,40 @@
-<div class="corbels">
-  <div class="corbel-border">
-  </div>
-  <div class="corbel-shadow">
-  </div>
-</div>
-<div class="site-title-container">
-  <div class="temple-block">
-    <div class="temple-decoration">
-      <div class="temple-column"></div>
-      <%= image_tag ('bracket-with-shadow.svg'), alt: "", role: "presentation" %>
-      <div class="temple-cap"></div>
+<div class="temple-header">
+  <div class="corbels">
+    <div class="corbel-border">
     </div>
-    <div class="site-title-block">
-      <%= link_to home_path, class: "site-title-link" do %>
-        <div class="h1">
-          <% if I18n.exists?("general.project_shortname", locale) %>
-            <div class="site-title">
-              <%= t "general.project_shortname", default: "Add project name to locale file" %>
-            </div>
-          <% end %>
-          <% if I18n.exists?("general.project_subtitle", locale) %>
-            <small class="site-subtitle">
-              <%= t "general.project_subtitle", default: "Add project subtitle to locale file" %>
-            </small>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-    <div class="temple-decoration">
-      <div class="temple-column"></div>
-      <%= image_tag ('bracket-with-shadow.svg'), alt: "", role: "presentation" %>
-      <div class="temple-cap"></div>
+    <div class="corbel-shadow">
     </div>
   </div>
-</div>
+  <div class="site-title-container">
+
+    <div class="temple-crossbeam"></div>
+    <div class="temple-block">
+      <div class="temple-decoration">
+        <div class="temple-column"></div>
+        <%= image_tag ('bracket-with-shadow.svg'), alt: "", role: "presentation" %>
+        <div class="temple-cap"></div>
+      </div>
+      <div class="site-title-block">
+        <%= link_to home_path, class: "site-title-link" do %>
+          <div class="h1">
+            <% if I18n.exists?("general.project_shortname", locale) %>
+              <div class="site-title">
+                <%= t "general.project_shortname", default: "Add project name to locale file" %>
+              </div>
+            <% end %>
+            <% if I18n.exists?("general.project_subtitle", locale) %>
+              <small class="site-subtitle">
+                <%= t "general.project_subtitle", default: "Add project subtitle to locale file" %>
+              </small>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="temple-decoration">
+        <div class="temple-column"></div>
+        <%= image_tag ('bracket-with-shadow.svg'), alt: "", role: "presentation" %>
+        <div class="temple-cap"></div>
+      </div>
+    </div>
+  </div>
+  <%# div class="temple-header" is closed in _navbar.html.erb %>

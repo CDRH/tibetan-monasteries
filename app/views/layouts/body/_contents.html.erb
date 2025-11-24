@@ -1,11 +1,4 @@
 <main class="main-content" id="content-wrapper" tabindex="-1">
-  <% if @title != nil %>
-    <div class="page-title-wrapper">
-      <div class="container">
-        <h1 class="h1 page-title"><%= sanitize @title %></h1>
-      </div>
-    </div>
-  <% end %>
   <div class="container">
     <%= render_overridable("layouts/body", "flash") %>
     <%= yield %>
