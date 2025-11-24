@@ -346,12 +346,11 @@ $temple-bracket-width-md: 200px;
     .temple-crossbeam {
       background: $tm-red-dark;
       border-bottom: 1px solid $tm-brown-dark;
-      border-radius:  0px 0px 4px 4px;
       box-shadow: inset 0px 12px 12px -12px;
       display: block;
-      height: $temple-bracket-width * 0.25;
+      height: $temple-bracket-width * 0.175;
       margin: auto;
-      max-width: $screen-md - $grid-gutter-width;
+      max-width: 540px;
       width: 100%;
     }
 
@@ -359,7 +358,6 @@ $temple-bracket-width-md: 200px;
       display: flex;
       justify-content: center;
       margin: auto;
-      max-width: $screen-md - $grid-gutter-width;
       overflow-x: hidden;
       width: 100%;
 
@@ -463,13 +461,26 @@ $temple-bracket-width-md: 200px;
   }
 }
 
+@media screen and (min-width: 550px) {
+  .temple-crossbeam {
+      border-radius:  0px 0px 3px 3px;
+  }
+}
+
 
 @media screen and (min-width: 768px) {
   .temple-header {
 
     .site-title-container {
 
+      .temple-crossbeam {
+        border-radius:  0px 0px 4px 4px;
+        height: $temple-bracket-width * 0.25;
+        max-width: 930px;
+      }
+
       .temple-block {
+        max-width: 900px;
 
         .temple-decoration {
           flex-grow: 1;
@@ -513,6 +524,11 @@ $temple-bracket-width-md: 200px;
 @media screen and (min-width: 992px) {
   .temple-header {
     .site-title-container {
+
+      .temple-crossbeam {
+        // max-width: px;
+      }
+
       .temple-block {
 
         .temple-decoration {
@@ -619,6 +635,11 @@ $temple-bracket-width-md: 200px;
           display: flex;
           float: none;
           justify-content: center;
+
+          > li > a {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
         }
       }
     }
