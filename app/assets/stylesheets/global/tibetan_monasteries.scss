@@ -189,8 +189,8 @@ $spacer: $font-size-base; // 16px
 
   --tm-gold: rgb(248, 199, 53);
   --tm-gold-rgb: 248, 199, 53;
-  --tm-dark-gold: rgb(223, 156, 13);
-  --tm-dark-gold-rgb: 223, 156, 13;
+  --tm-gold-dark: rgb(223, 156, 13);
+  --tm-gold-dark-rgb: 223, 156, 13;
 
   --tm-copper: rgb(205, 116, 48);
   --tm-copper-rgb: 205, 116, 48;
@@ -335,7 +335,6 @@ $temple-bracket-width-sm: 150px;
 $temple-bracket-width-md: 200px;
 
 .temple-header {
-  // border-bottom: 3px solid $tm-brown-light;
   display: flex;
   flex-direction: column-reverse;
 
@@ -373,7 +372,7 @@ $temple-bracket-width-md: 200px;
         justify-content: center;
 
         .temple-cap {
-          background: $tm-dark-gold;
+          background: $tm-gold-dark;
           border-top-color: $tm-brown;
           border-radius: 0px 0px 2px 2px;
           box-shadow: inset 0px 3px 6px -3px rgba(0,0,0,0.75);
@@ -467,6 +466,7 @@ $temple-bracket-width-md: 200px;
 
 @media screen and (min-width: 768px) {
   .temple-header {
+
     .site-title-container {
 
       .temple-block {
@@ -627,55 +627,88 @@ $temple-bracket-width-md: 200px;
 
 // Corbel border
 
-.corbels {
-  border-top: 10px solid $tm-brown;
-  background: $tm-white;
-  box-shadow: 0 0px 12px 0 rgba(0,0,0,0.25);
-  padding-bottom: 16px;
+$corbel-height: 8px;
+$corbel-height-sm: $corbel-height * 1.5; // 12px
+$corbel-height-md: $corbel-height * 1.75;
+$corbel-space: $corbel-height * 2.5;
+$corbel-space-sm: $corbel-height-sm * 2.5;
+$corbel-space-md: $corbel-height-md * 2.5;
 
-  .corbel-border {
-      background: repeating-linear-gradient(90deg, $tm-brown, $tm-brown 12px, $temple-border-color 12px, $temple-border-color 32px);
-      box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75);
-      height: 12px;
+.temple-header {
+  border-bottom: $corbel-height solid $tm-gray-lighter;
+
+  .corbels {
+    border-top: $corbel-height solid $tm-brown;
+    background: $tm-white;
+    box-shadow: 0 0px 6px 0 rgba(0,0,0,0.5);
+    padding-bottom: $corbel-height;
+
+    .corbel-border {
+        background: repeating-linear-gradient(90deg, $tm-brown, $tm-brown $corbel-height, $temple-border-color $corbel-height, $temple-border-color $corbel-space);
+        box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75);
+        height: $corbel-height;
+    }
+
+    .corbel-border:after {
+      content: '';
+      background: $light-base;
+      background: linear-gradient(0deg,rgba(238, 242, 244, 0.25) 100%, rgba(238, 242, 244, 0) 0%);
+      display: block; 
+      height: $corbel-height * 0.5;
+      position: relative;
+      opacity: 0.5;
+      top: $corbel-height * 0.5;
+      width: 100%;
+    }
   }
+}
 
-  .corbel-border:after {
-    content: '';
-    background: $light-base;
-    background: linear-gradient(0deg,rgba(238, 242, 244, 0.25) 100%, rgba(238, 242, 244, 0) 0%);
-    display: block; 
-    height: 6px;
-    position: relative;
-    opacity: 0.5;
-    top: 6px;
-    width: 100%;
+@media screen and (min-width: 768px) {
+  .temple-header {
+    border-bottom-width: $corbel-height-sm;
+
+    .corbels {
+      border-top-width: $temple-border-width-sm;
+      padding-bottom: $corbel-height-sm;
+
+      .corbel-border {
+        background: repeating-linear-gradient(90deg, $tm-brown, $tm-brown $corbel-height-sm, $temple-border-color $corbel-height-sm, $temple-border-color $corbel-space-sm);
+        height: $corbel-height-sm;
+      }
+
+      .corbel-border:after {
+        height: $corbel-height-sm * 0.5;
+        top: $corbel-height-sm * 0.5;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 992px) {
+  .temple-header {
+    border-bottom-width: $corbel-height-md;
 
-  .corbel-border {
-      background: repeating-linear-gradient(90deg, $tm-brown, $tm-brown 16px, $temple-border-color 16px, $temple-border-color 50px);
-      box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75);
-      height: 16px;
-  }
+    .corbels {
+      padding-bottom: $corbel-height-md;
 
-  .corbel-border:after {
-    content: '';
-    background: $light-base;
-    background: linear-gradient(0deg,rgba(238, 242, 244, 0.25) 100%, rgba(238, 242, 244, 0) 0%);
-    display: block; 
-    height: 9px;
-    position: relative;
-    opacity: 0.5;
-    top: 7px;
-    width: 100%;
+      .corbel-border {
+        background: repeating-linear-gradient(90deg, $tm-brown, $tm-brown $corbel-height-md, $temple-border-color $corbel-height-md, $temple-border-color $corbel-space-md);
+        box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75);
+        height: $corbel-height-md;
+      }
+
+      .corbel-border:after {
+        height: $corbel-height-md * 0.5;
+        top: $corbel-height-md * 0.5;
+      }
+    }
   }
 }
 
 // Main Content
 
 .main-content {
+  box-shadow: inset 0px 4px 3px -4px rgba(0,0,0,0.5);
   padding-bottom: 3rem;
 
   // Dharma wheel background 
