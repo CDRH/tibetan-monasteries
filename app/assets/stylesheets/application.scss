@@ -18,10 +18,6 @@
  * require_self
  */
 
-
-// Import app-wide styling from "global" sub-directory
-@import "global/*";
-
 // Import bootstrap variable overrides before importing bootstrap
 @import "bootstrap-variables";
 
@@ -32,3 +28,5 @@
 // Import Orchid-wide styling from Orchid gem
 @import "orchid";
 
+// Import app-wide styling from "global" sub-directory
+@import "global/*";
