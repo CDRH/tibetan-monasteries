@@ -26,6 +26,36 @@ $brand-danger:          #6F787B !default; //gray
 
 $nav-accent:            #f8f8f8 !default;
 
+// BEGIN CUSTOMIZATIONS:
+
+$tm-blue: rgb(70, 86, 128); 
+$tm-blue-rgb: 70, 86, 128; 
+$tm-blue-dark: rgb(59, 74, 113);
+$tm-blue-dark-rgb: 59, 74, 113;
+$tm-blue-darker: rgb(37, 53, 96);
+$tm-blue-darker-rgb: 37, 53, 96;
+$tm-gray-dark: rgb(64, 60, 60);
+$tm-gray-dark-rgb: 64, 60, 60;
+$tm-gray-darker: rgb(28, 26, 26);
+$tm-gray-darker-rgb: 28, 26, 26;
+$tm-gray: rgb(102, 102, 12);
+$tm-gray-rgb: 102, 102, 12;
+$tm-gray-light: rgb(165, 156, 156);
+$tm-gray-light-rgb: 165, 156, 156;
+$tm-gray-lighter: rgb(226, 223, 223);
+$tm-gray-lighter-rgb: 226, 223, 223;
+$tm-gold: rgb(248, 199, 53);
+$tm-gold-rgb: 248, 199, 53;
+$tm-gold-dark: rgb(223, 156, 13);
+$tm-gold-dark-rgb: 223, 156, 13;
+$tm-red: rgb(168, 25, 36);
+$tm-red-rgb: 168, 25, 36;
+$tm-red-dark: rgb(107, 17, 17);
+$tm-red-dark-rgb: 107, 17, 17;
+$tm-white: rgb(255, 251, 252);
+$tm-white-rgb: 255, 251, 252;
+
+// END CUSTOMIZATIONS
 
 //== Scaffolding
 //
@@ -876,3 +906,59 @@ $page-header-border-color:    $gray-lighter !default;
 $dl-horizontal-offset:        $component-offset-horizontal !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;
+
+
+//
+// Tibetan Monasteries bootstrap-variables customizations
+// --------------------------------------------------
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  "Noto Sans", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+$font-family-serif:       "Noto Serif", Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:        $font-family-serif;
+
+// Other writing systems
+
+$font-family-devanagari: "Noto Serif Devanagari", sans-serif;
+$font-family-tibetan: "Noto Serif Tibetan", sans-serif;
+
+$font-size-h2:            floor(($font-size-base * 2));
+$font-size-h3:            ceil(($font-size-base * 1.6));
+$font-size-h4:            ceil(($font-size-base * 1.1));
+
+$headings-font-family: "Inknut Antiqua", $font-family-serif;
+$headings-font-weight: 600;
+
+
+
+// BEGIN CUSTOMIZATIONS:
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-margin-bottom:             0;
+
+$navbar-default-color:             white;
+$navbar-default-bg:                $tm-blue;
+$navbar-default-border:            white;
+
+// Navbar links
+$navbar-default-link-color:                white;
+$navbar-default-link-hover-color:          white;
+$navbar-default-link-hover-bg:             $tm-blue-dark;
+$navbar-default-link-active-color:         white;
+$navbar-default-link-active-bg:            $tm-blue-darker;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           $tm-blue-darker;
+$navbar-default-toggle-icon-bar-bg:        $tm-white;
+$navbar-default-toggle-border-color:       $tm-white;
+
+// END CUSTOMIZATIONS
