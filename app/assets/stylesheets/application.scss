@@ -18,8 +18,6 @@
  * require_self
  */
 
-// Import Orchid-wide styling from Orchid gem
-@import "orchid";
 
 // Import app-wide styling from "global" sub-directory
 @import "global/*";
@@ -30,4 +28,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Import Orchid-wide styling from Orchid gem
+@import "orchid";
 
