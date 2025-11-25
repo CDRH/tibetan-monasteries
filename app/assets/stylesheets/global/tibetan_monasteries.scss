@@ -88,6 +88,8 @@ $navbar-default-toggle-border-color:       $tm-white;
 // --------------------------------------------------
 
 // Margin 
+$spacer: $font-size-base;
+
 .mb-1 {margin-bottom: $spacer * 0.25;}
 .mb-2 {margin-bottom: $spacer * 0.5;}
 .mb-3 {margin-bottom: $spacer;}
