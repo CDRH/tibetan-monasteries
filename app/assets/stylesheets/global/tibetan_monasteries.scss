@@ -231,6 +231,11 @@ $spacer: $font-size-base; // 16px
   rgba(168, 25, 36, 1) 100%);
 }
 
+// Shadows
+
+$shadow-inset-bottom: inset 0px -8px 6px -8px;
+$shadow-inset-top: inset 0px 8px 6px -8px;
+
 // Additional Language Fonts
 
 :root {
@@ -396,8 +401,15 @@ $temple-bracket-width-md: 200px;
 
         .temple-column {
           background: $tm-gray-lighter;
-          background: #E2DFDF;
-          background: linear-gradient(90deg, rgba(226, 223, 223, 1) 0%, rgba(255, 250, 251, 1) 33%, rgba(255, 250, 251, 1) 67%, rgba(226, 223, 223, 1) 100%);
+          background: #E2DFDF; // rgb(185, 180, 180);
+          background: linear-gradient(90deg, 
+          rgb(185, 180, 180) 0%, 
+          rgb(226, 223, 223) 15%, 
+          rgb(255, 250, 251) 40%, 
+          rgb(255, 255, 255) 50%, 
+          rgb(255, 250, 251) 60%, 
+          rgb(226, 223, 223) 85%, 
+          rgb(185, 180, 180) 100%);
           // border-left: 1px solid $tm-gray-lighter;
           // border-right: 1px solid $tm-gray-lighter;
           box-shadow: inset 0px 6px 2px -6px rgba(0, 0, 0, 0.33);
@@ -567,7 +579,7 @@ $temple-bracket-width-md: 200px;
   border-left: none;
   border-right: none;
   border-top: $temple-border-width solid $temple-border-color;
-  box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75), inset 0px -8px 6px -8px rgba(0, 0, 0, 0.75); // 0px 0px 8px rgba(0,0,0,0.75);
+  box-shadow: $shadow-inset-top rgba(0, 0, 0, 0.75), $shadow-inset-bottom rgba(0, 0, 0, 0.75); // 0px 0px 8px rgba(0,0,0,0.75);
   font-family: $font-family-sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
@@ -590,7 +602,7 @@ $temple-bracket-width-md: 200px;
   .navbar-collapse {
     background: $navbar-default-bg;
     border: 0;
-    border-top: 1px solid #253560;
+    border-top: 1px solid rgba(255,255,255,0.33);
 
 
     .navbar-nav {
@@ -606,7 +618,7 @@ $temple-bracket-width-md: 200px;
         }
         
         &.active > a {
-          box-shadow: inset 0px 0px 1px black;
+          box-shadow: inset 0px 0px 8px 2px black;
 
           &:hover {
             background-color: $navbar-default-link-hover-bg;
@@ -614,7 +626,7 @@ $temple-bracket-width-md: 200px;
         }
 
         > a:hover {
-          box-shadow: inset 0px 0px 9px #1c1f26;
+          box-shadow: inset 0px 0px 8px 1px black;
         }
       }
     }
@@ -631,7 +643,7 @@ $temple-bracket-width-md: 200px;
       .container {
 
         .navbar-nav {
-          box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75), inset 0px -8px 6px -8px rgba(0, 0, 0, 0.75);
+          box-shadow: $shadow-inset-top rgba(0, 0, 0, 0.75), $shadow-inset-bottom rgba(0, 0, 0, 0.75);
           display: flex;
           float: none;
           justify-content: center;
@@ -666,7 +678,7 @@ $corbel-space-md: $corbel-height-md * 2.5;
 
     .corbel-border {
         background: repeating-linear-gradient(90deg, $tm-brown, $tm-brown $corbel-height, $temple-border-color $corbel-height, $temple-border-color $corbel-space);
-        box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75);
+        box-shadow: $shadow-inset-top rgb(0, 0, 0);
         height: $corbel-height;
     }
 
@@ -714,7 +726,7 @@ $corbel-space-md: $corbel-height-md * 2.5;
 
       .corbel-border {
         background: repeating-linear-gradient(90deg, $tm-brown, $tm-brown $corbel-height-md, $temple-border-color $corbel-height-md, $temple-border-color $corbel-space-md);
-        box-shadow: inset 0px 8px 6px -8px rgba(0, 0, 0, 0.75);
+        box-shadow: $shadow-inset-top rgba(0, 0, 0, 0.75);
         height: $corbel-height-md;
       }
 
@@ -735,13 +747,9 @@ $corbel-space-md: $corbel-height-md * 2.5;
   // Dharma wheel background 
   background-image: image-url('dharma-wheel.svg');
   background-position-x: right -300px;
-  background-position-y: bottom -300px;
+  background-position-y: top 100px;
   background-size: 800px;
   background-repeat: no-repeat;
-
-  .page-title {
-    margin-top: 2rem;
-  }
 
   // Wrapper for pages with only text
 
@@ -750,10 +758,75 @@ $corbel-space-md: $corbel-height-md * 2.5;
     margin-right: auto;
     max-width: $screen-md - $grid-gutter-width;
   }
+
+  .container > h1 {
+    margin-top: 4rem;
+  }
 }
 
 // Homepage
 
 .action_index .main-content .row img {
   width: 100%;
+}
+
+.navbar-default,
+.navbar-nav li.active a,
+.temple-crossbeam,
+.temple-cap,
+.temple-column {
+  position: relative;
+
+  &:before {
+    content: '';
+    
+    // Bedge Grunge
+    // background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png"); // TEMP to do: download image
+    // opacity: 0.4;
+    
+    // Rocky wall (marble)
+    // background-image: url("https://www.transparenttextures.com/patterns/rocky-wall.png");
+    bottom: 0;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.navbar-default:before,
+.navbar-nav li.active a:before {
+  // Dark Wall
+  // background-image: url("https://www.transparenttextures.com/patterns/dark-wall.png");
+  
+  // background-image: image-url('texture.svg');
+  // background-size: 20px;
+  // opacity: 0.1;
+
+  // Marble
+  background-image: url("https://www.transparenttextures.com/patterns/rocky-wall.png");
+  background-size: 200px;
+
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-nav li.active a:before {
+  opacity: 0.2;
+}
+
+.temple-crossbeam:before {
+  // Wood
+  background-image: url("https://www.transparenttextures.com/patterns/purty-wood.png");
+  opacity: 0.25;
+}
+
+.temple-cap:before,
+.temple-column:before {
+  // Concrete Wall
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
+  opacity: 0.7;
+
+  
 }

@@ -29,12 +29,13 @@ $nav-accent:            #f8f8f8 !default;
 
 // Theme Colors
 
-$temple-blue: rgb(70, 86, 128);
+$temple-blue: rgb(70, 86, 128); 
 $temple-blue-dark: rgb(59, 74, 113);
 $temple-blue-darker: rgb(37, 53, 96);
-$tm-brown: #553b34;
-$tm-brown-dark: #4a3630;
-$tm-brown-light: #6e554f;
+$tm-brown: rgb(92, 66, 59); // #5c423b // old: rgb(76, 56, 51);
+$tm-brown-dark: rgb(74, 54, 48); // #4a3630;
+$tm-brown-darker: rgb(32, 29, 29); // #201d1d;
+$tm-brown-light: rgb(110, 85, 79); // #6e554f;
 // $temple-green: #3d915b;
 // $temple-green-dark: #2f794a;
 // $temple-red: rgb(187, 58, 58); 
@@ -441,15 +442,15 @@ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2
 $navbar-collapse-max-height:       340px !default;
 
 $navbar-default-color:             white; // $gray !default;
-$navbar-default-bg:                $temple-blue; // $nav-accent !default;
+$navbar-default-bg:                $tm-brown; // $nav-accent !default;
 $navbar-default-border:            white; // #ddd !default;
 
 // Navbar links
 $navbar-default-link-color:                white; // $gray !default;
 $navbar-default-link-hover-color:          white; // $gray;
-$navbar-default-link-hover-bg:             $temple-blue-dark; // darken($navbar-default-bg, 8%) !default;
+$navbar-default-link-hover-bg:             $tm-brown-dark; // darken($navbar-default-bg, 8%) !default;
 $navbar-default-link-active-color:         white; // $gray-dark !default;
-$navbar-default-link-active-bg:            $temple-blue-darker; // darken($navbar-default-bg, 16%) !default;
+$navbar-default-link-active-bg:            $tm-brown-darker; // darken($navbar-default-bg, 16%) !default;
 $navbar-default-link-disabled-color:       $gray-light !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 
@@ -459,9 +460,9 @@ $navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 1
 $navbar-default-brand-hover-bg:            transparent !default;
 
 // Navbar toggle
-$navbar-default-toggle-hover-bg:           #ddd !default;
-$navbar-default-toggle-icon-bar-bg:        #888 !default;
-$navbar-default-toggle-border-color:       #ddd !default;
+$navbar-default-toggle-hover-bg:           $tm-brown-darker !default; // #ddd !default;
+$navbar-default-toggle-icon-bar-bg:        $tm-white !default; // #888 !default;
+$navbar-default-toggle-border-color:       $tm-white !default; // #ddd !default;
 
 
 //=== Inverted navbar
