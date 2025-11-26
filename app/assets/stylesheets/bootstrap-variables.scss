@@ -931,9 +931,10 @@ $font-size-h2:            floor(($font-size-base * 2));
 $font-size-h3:            ceil(($font-size-base * 1.6));
 $font-size-h4:            ceil(($font-size-base * 1.1));
 
-$headings-font-family: "Inknut Antiqua", $font-family-serif;
+$headings-font-family: $font-family-serif;
 $headings-font-weight: 600;
 
+$title-font-family: "Inknut Antiqua", $font-family-serif;
 
 
 // BEGIN CUSTOMIZATIONS:

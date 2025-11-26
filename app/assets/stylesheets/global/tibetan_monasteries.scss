@@ -51,3 +51,9 @@ $spacer: 16px;
 .pt-3 {padding-top: $spacer;}
 .pt-4 {padding-top: $spacer * 1.5;}
 .pt-5 {padding-top: $spacer * 3;}
+
+// 
+
+h1, .h1 {
+  font-family: $title-font-family;
+}
