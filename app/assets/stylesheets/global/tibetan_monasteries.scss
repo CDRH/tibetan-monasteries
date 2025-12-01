@@ -52,8 +52,20 @@ $spacer: 16px;
 .pt-4 {padding-top: $spacer * 1.5;}
 .pt-5 {padding-top: $spacer * 3;}
 
-// 
+// Headings
 
 h1, .h1 {
   font-family: $title-font-family;
+}
+
+// Body Layout
+
+#body-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+
+  .main-content {
+    flex-grow: 1;
+  }
 }
