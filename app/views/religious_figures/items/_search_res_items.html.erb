@@ -18,6 +18,25 @@
                   default: "Tradition of Tibetan Buddhism"), "type", link: false) %>
               </li>
             <% end %>
+            <% if item["rdf"].present? %>
+              <li class="associated-monasteries">
+                <strong>Associated monasteries<% if item["monastery_count_k"].present? %> (<%= t (item["monastery_count_k"]) %>)<% end %>:</strong>
+                <ul>
+                  <% monasteries = item["rdf"].select { |i| i["predicate"] != "sameAs" } %>
+                  <% monasteries.each do |monastery| %>
+                    <% id = parse_md_parentheses(monastery["object"]) %>
+                    <% name = parse_md_brackets(monastery["object"]) %>
+                    <li>
+                      <% if name %>
+                        <%= link_to name, monasteries_item_path(id) %>
+                      <% else %>
+                        <%= name %>
+                      <% end%>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
