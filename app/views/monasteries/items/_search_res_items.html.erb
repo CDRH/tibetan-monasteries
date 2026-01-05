@@ -18,6 +18,25 @@
                   default: "Religious Tradition"), "type", link: false) %>
               </li>
             <% end %>
+            <% if item["rdf"].present? %>
+              <li class="associated-figures">
+                <span class="array-label"><strong>Associated figures:</strong> <% if item["figure_count_k"].present? %> <%= item["figure_count_k"] %><% end %></span>
+                <ul>
+                <% figures = item["rdf"].select { |i| i["predicate"] != "sameAs" } %>
+                <% figures.each do |figure| %>
+                  <% id = parse_md_parentheses(figure["subject"]) %>
+                  <% name = parse_md_brackets(figure["subject"]) %>
+                    <li>
+                      <% if name %>
+                        <%= link_to name, religious_figures_item_path(id) %>
+                      <% else %>
+                        <%= name %>
+                      <% end%>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            <% end %>
           </ul>
         </div>
         <% if item["highlight"].present? %>
