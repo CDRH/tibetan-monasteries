@@ -1,8 +1,8 @@
 en:
-  #########
-  # ABOUT #
-  #########
-  religious_figures:
-    title: Religious Figures
+  ##################
+  # SEARCH PRESETS #
+  ##################
   monasteries:
     title: Monasteries
+  religious_figures:
+    title: Religious Figures
