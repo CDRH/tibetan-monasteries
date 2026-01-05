@@ -20,7 +20,7 @@
             <% end %>
             <% if item["rdf"].present? %>
               <li class="associated-figures">
-                <span class="array-label"><strong>Associated figures:</strong> <% if item["figure_count_k"].present? %> <%= t (item["figure_count_k"]) %><% end %>
+                <span class="array-label"><strong>Associated figures:</strong> <% if item["figure_count_k"].present? %> <%= item["figure_count_k"] %><% end %></span>
                 <ul>
                 <% figures = item["rdf"].select { |i| i["predicate"] != "sameAs" } %>
                 <% figures.each do |figure| %>
