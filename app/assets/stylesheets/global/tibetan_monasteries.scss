@@ -80,19 +80,18 @@ h1 {
 #header {
 
   .h1 {
-    font-family: $title-font-family;
     font-size: 24px;
     font-weight: $title-font-weight;
     text-align: center;
 
     .site-title {
+      font-family: $title-font-family;
       font-weight: $title-font-weight + 100;
-      text-transform: uppercase;
+      letter-spacing: $title-font-letter-spacing;
     }
 
     small {
       font-size: 75%;
-      letter-spacing: $title-font-letter-spacing + 0.05rem;
     }
   }
 }
@@ -133,10 +132,7 @@ h1 {
 
 
 
-  .footer_info {
-    p {
-      display: none;
-    }
+  .footer-info {
     a {
       color: $tm-gold;
     }
