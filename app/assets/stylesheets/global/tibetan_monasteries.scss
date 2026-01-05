@@ -138,3 +138,31 @@ h1 {
     }
   }
 }
+
+
+// Search 
+// ========
+
+.search_results_info {
+  .associated-figures, 
+  .associated-monasteries {
+    .array-label {
+      width: 100%;
+    }
+
+    ul {
+
+      li {
+
+        &:after {
+          content: '|';
+          display: inline-block;
+        }
+
+        &:last-of-type:after {
+          content: '';
+        }
+      }
+    }
+  }
+}
