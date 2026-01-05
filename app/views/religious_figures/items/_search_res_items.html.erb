@@ -5,30 +5,30 @@
       <div class="row">
         <div class="<%= item["highlight"].present? ? "col-md-4" : "col-md-12" %> search_results_info">
           <ul>
-            <%# TODO make sure arguments point to the correct place in the translation file %>
             <% if item["date_display"].present? %>
               <li>
                 <%= metadata(item, t("search.results.item.date",
                   default: "Lifespan"), "date_display", link: false) %>
               </li>
             <% end %>
+            <%# TODO how are we going to structure this metadata? Person within person is weird %>
             <% if item["type"].present? %>
               <li>
                 <%= metadata(item, t("search.results.item.type",
-                  default: "Tradition of Tibetan Buddhism"), "type", link: false) %>
+                  default: "Religious Tradition"), "type", link: false) %>
               </li>
             <% end %>
             <% if item["rdf"].present? %>
-              <li class="associated-monasteries">
-                <strong>Associated monasteries<% if item["monastery_count_k"].present? %> (<%= t (item["monastery_count_k"]) %>)<% end %>:</strong>
+              <li class="associated-figures">
+                <span class="array-label"><strong>Associated figures:</strong> <% if item["figure_count_k"].present? %> <%= item["figure_count_k"] %><% end %></span>
                 <ul>
-                  <% monasteries = item["rdf"].select { |i| i["predicate"] != "sameAs" } %>
-                  <% monasteries.each do |monastery| %>
-                    <% id = parse_md_parentheses(monastery["object"]) %>
-                    <% name = parse_md_brackets(monastery["object"]) %>
+                <% figures = item["rdf"].select { |i| i["predicate"] != "sameAs" } %>
+                <% figures.each do |figure| %>
+                  <% id = parse_md_parentheses(figure["subject"]) %>
+                  <% name = parse_md_brackets(figure["subject"]) %>
                     <li>
                       <% if name %>
-                        <%= link_to name, monasteries_item_path(id) %>
+                        <%= link_to name, religious_figures_item_path(id) %>
                       <% else %>
                         <%= name %>
                       <% end%>
@@ -39,6 +39,18 @@
             <% end %>
           </ul>
         </div>
+        <% if item["highlight"].present? %>
+          <div class="col-md-8 search_results_text">
+            <% item["highlight"].each do |key, hls| %>
+              <div class="search_results_highlights well">
+                <strong><%= key.titleize %>:</strong>
+                <% hls.each do |hl| %>
+                  <p><%= hl.html_safe %></p>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>
