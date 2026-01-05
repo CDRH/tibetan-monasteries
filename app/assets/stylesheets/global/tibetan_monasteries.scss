@@ -144,11 +144,19 @@ h1 {
 // ========
 
 .search_results_info {
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    .array-label,
+    li > ul, 
+    li > ul > li {
+      display: inline;
+    }
+  }
   .associated-figures, 
   .associated-monasteries {
-    .array-label {
-      width: 100%;
-    }
 
     ul {
 

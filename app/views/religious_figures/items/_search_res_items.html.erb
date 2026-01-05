@@ -19,16 +19,16 @@
               </li>
             <% end %>
             <% if item["rdf"].present? %>
-              <li class="associated-figures">
-                <span class="array-label"><strong>Associated figures:</strong> <% if item["figure_count_k"].present? %> <%= item["figure_count_k"] %><% end %></span>
+              <li class="associated-monasteries">
+                <span class="array-label"><strong>Associated Monasteries<% if item["monastery_count_k"].present? %> (<%= item["monastery_count_k"] %>)<% end %>:</strong></span>
                 <ul>
-                <% figures = item["rdf"].select { |i| i["predicate"] != "sameAs" } %>
-                <% figures.each do |figure| %>
-                  <% id = parse_md_parentheses(figure["subject"]) %>
-                  <% name = parse_md_brackets(figure["subject"]) %>
+                <% monasteries = item["rdf"].select { |i| i["predicate"] != "sameAs" } %>
+                <% monasteries.each do |monastery| %>
+                  <% id = parse_md_parentheses(monastery["object"]) %>
+                  <% name = parse_md_brackets(monastery["object"]) %>
                     <li>
                       <% if name %>
-                        <%= link_to name, religious_figures_item_path(id) %>
+                        <%= link_to name, monasteries_item_path(id) %>
                       <% else %>
                         <%= name %>
                       <% end%>
