@@ -130,9 +130,12 @@ h1 {
   background: $tm-red-dark;
   color: white;
 
-
-
   .footer-info {
+    // Hide byline with CSS
+    p:first-of-type {
+      display: none;
+    }
+    
     a {
       color: $tm-gold;
     }
