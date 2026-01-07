@@ -65,7 +65,7 @@ h1 {
 // ===========
 
 #body_wrapper {
-  border-top: 15px solid $tm-blue;
+  border-top: 12px solid $tm-red-dark;
   display: flex;
   flex-direction: column;
   min-height: 100vh; 
@@ -80,16 +80,34 @@ h1 {
 
 #header {
   background-color: $tm-gold-dark;
-  border-top: 5px solid $tm-blue-darker;
+  border-top: 3px solid #4c1818;
 
-  .site-title-container {
+  .site-banner {
     display: flex;
     justify-content: center;
     height: 16rem;
 
+    .header-left, 
+    .header-right {
+      flex-grow: 1;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .site-title-container {
+      background: linear-gradient(90deg, rgba(var(--tm-gold-dark-rgb), 1) 0%, rgba(var(--tm-gold-rgb), 1) 40%, rgba(var(--tm-gold-rgb), 1) 60%, rgba(var(--tm-gold-dark-rgb), 1) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-shrink: 0;
+      flex-grow: 1;
+      max-width: 768px;
+    }
+
     a {
       color: #4c1818;
-      padding: 1.5rem 4rem;
     }
     
     a small {
@@ -118,13 +136,30 @@ h1 {
 
 @media screen and (min-width: 768px) {
   #header {
-    background-position-x: 0;
-    .h1 {
+    .header-left,
+    .header-right {
+      display: flex;
+    }
+
+    .header-left {
+      justify-content: end;
+    }
+
+    .header-right {
+      justify-content: start;
+    }
+
+    .site-title-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      .h1 {
       font-size: 42px;
 
       small {
         font-size: 63%;
       }
+    }
     }
   }
 }
@@ -136,6 +171,16 @@ h1 {
     border: none;
     font-family: $font-family-sans-serif;
 
+  }
+}
+
+@media screen and (min-width: 768px) {
+  // Boptstrap navbar fixes
+
+  #header .navbar-nav {
+    display: flex;
+    float: initial;
+    justify-content: center;
   }
 }
 

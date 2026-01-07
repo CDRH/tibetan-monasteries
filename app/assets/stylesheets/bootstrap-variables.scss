@@ -40,6 +40,7 @@ $tm-gold: rgb(248, 199, 53);
 $tm-gold-dark: rgb(223, 156, 13);
 $tm-red: rgb(168, 25, 36);
 $tm-red-dark: rgb(107, 17, 17);
+$tm-red-darker: rgb(76, 24, 24);
 $tm-white: rgb(255, 251, 252);
 
 :root {
@@ -55,6 +56,7 @@ $tm-white: rgb(255, 251, 252);
   --tm-gold-dark-rgb: 223, 156, 13;
   --tm-red-rgb: 168, 25, 36;
   --tm-red-dark-rgb: 107, 17, 17;
+  --tm-red-darker-rgb: 76, 24, 24;
   --tm-white-rgb: 255, 251, 252;
 }
 
@@ -953,15 +955,15 @@ $title-font-weight: 300;
 $navbar-margin-bottom:             0;
 
 $navbar-default-color:             white;
-$navbar-default-bg:                $tm-blue;
+$navbar-default-bg:                $tm-red-dark;
 $navbar-default-border:            white;
 
 // Navbar links
 $navbar-default-link-color:                white;
 $navbar-default-link-hover-color:          white;
-$navbar-default-link-hover-bg:             $tm-blue-dark;
+$navbar-default-link-hover-bg:             $tm-red-darker;
 $navbar-default-link-active-color:         white;
-$navbar-default-link-active-bg:            $tm-blue-darker;
+$navbar-default-link-active-bg:            $tm-red-darker;
 
 // Navbar toggle
 $navbar-default-toggle-hover-bg:           $tm-blue-darker;
