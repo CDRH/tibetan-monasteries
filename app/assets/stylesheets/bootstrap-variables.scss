@@ -28,32 +28,35 @@ $nav-accent:            #f8f8f8 !default;
 
 // BEGIN CUSTOMIZATIONS:
 
-$tm-blue: rgb(70, 86, 128); 
-$tm-blue-rgb: 70, 86, 128; 
+$tm-blue: rgb(70, 86, 128);
 $tm-blue-dark: rgb(59, 74, 113);
-$tm-blue-dark-rgb: 59, 74, 113;
 $tm-blue-darker: rgb(37, 53, 96);
-$tm-blue-darker-rgb: 37, 53, 96;
 $tm-gray-dark: rgb(64, 60, 60);
-$tm-gray-dark-rgb: 64, 60, 60;
 $tm-gray-darker: rgb(28, 26, 26);
-$tm-gray-darker-rgb: 28, 26, 26;
 $tm-gray: rgb(102, 102, 12);
-$tm-gray-rgb: 102, 102, 12;
 $tm-gray-light: rgb(165, 156, 156);
-$tm-gray-light-rgb: 165, 156, 156;
 $tm-gray-lighter: rgb(226, 223, 223);
-$tm-gray-lighter-rgb: 226, 223, 223;
 $tm-gold: rgb(248, 199, 53);
-$tm-gold-rgb: 248, 199, 53;
 $tm-gold-dark: rgb(223, 156, 13);
-$tm-gold-dark-rgb: 223, 156, 13;
 $tm-red: rgb(168, 25, 36);
-$tm-red-rgb: 168, 25, 36;
 $tm-red-dark: rgb(107, 17, 17);
-$tm-red-dark-rgb: 107, 17, 17;
 $tm-white: rgb(255, 251, 252);
-$tm-white-rgb: 255, 251, 252;
+
+:root {
+  --tm-blue-rgb: 70, 86, 128; 
+  --tm-blue-dark-rgb: 59, 74, 113;
+  --tm-blue-darker-rgb: 37, 53, 96;
+  --tm-gray-dark-rgb: 64, 60, 60;
+  --tm-gray-darker-rgb: 28, 26, 26;
+  --tm-gray-rgb: 102, 102, 12;
+  --tm-gray-light-rgb: 165, 156, 156;
+  --tm-gray-lighter-rgb: 226, 223, 223;
+  --tm-gold-rgb: 248, 199, 53;
+  --tm-gold-dark-rgb: 223, 156, 13;
+  --tm-red-rgb: 168, 25, 36;
+  --tm-red-dark-rgb: 107, 17, 17;
+  --tm-white-rgb: 255, 251, 252;
+}
 
 // END CUSTOMIZATIONS
 

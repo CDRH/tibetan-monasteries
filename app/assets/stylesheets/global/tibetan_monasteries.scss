@@ -1,7 +1,7 @@
 @import "../bootstrap-variables";
 
 // 
-// Utility Classes from Boostrap 5
+// Utility Classes from Bootstrap 5
 // --------------------------------------------------
 
 // Margin 
@@ -65,6 +65,7 @@ h1 {
 // ===========
 
 #body_wrapper {
+  border-top: 15px solid $tm-blue;
   display: flex;
   flex-direction: column;
   min-height: 100vh; 
@@ -78,9 +79,32 @@ h1 {
 // ========
 
 #header {
+  background-color: $tm-gold-dark;
+  border-top: 5px solid $tm-blue-darker;
+
+  .site-title-container {
+    display: flex;
+    justify-content: center;
+    height: 16rem;
+
+    a {
+      color: #4c1818;
+      padding: 1.5rem 4rem;
+    }
+    
+    a small {
+      color: $tm-red-dark;
+      font-size: 61%;
+      margin-left: 0.5ch;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
 
   .h1 {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: $title-font-weight;
     text-align: center;
 
@@ -89,17 +113,18 @@ h1 {
       font-weight: $title-font-weight + 100;
       letter-spacing: $title-font-letter-spacing;
     }
-
-    small {
-      font-size: 75%;
-    }
   }
 }
 
 @media screen and (min-width: 768px) {
   #header {
+    background-position-x: 0;
     .h1 {
-      font-size: $font-size-h1;
+      font-size: 42px;
+
+      small {
+        font-size: 63%;
+      }
     }
   }
 }
