@@ -41,6 +41,7 @@ $tm-gold-dark: rgb(223, 156, 13);
 $tm-red: rgb(168, 25, 36);
 $tm-red-dark: rgb(107, 17, 17);
 $tm-red-darker: rgb(76, 24, 24);
+$tm-sienna: rgb(175, 94, 35);
 $tm-white: rgb(255, 251, 252);
 
 :root {
@@ -57,6 +58,7 @@ $tm-white: rgb(255, 251, 252);
   --tm-red-rgb: 168, 25, 36;
   --tm-red-dark-rgb: 107, 17, 17;
   --tm-red-darker-rgb: 76, 24, 24;
+  --tm-sienna-rgb: 175, 94, 35;
   --tm-white-rgb: 255, 251, 252;
 }
 
@@ -954,20 +956,20 @@ $title-font-weight: 300;
 // Basics of a navbar
 $navbar-margin-bottom:             0;
 
-$navbar-default-color:             white;
-$navbar-default-bg:                $tm-red-dark;
-$navbar-default-border:            white;
+$navbar-default-color:             $tm-red-darker;
+$navbar-default-bg:                rgba(251, 215, 106, 0.5);
+$navbar-default-border:            transparent;
 
 // Navbar links
-$navbar-default-link-color:                white;
-$navbar-default-link-hover-color:          white;
-$navbar-default-link-hover-bg:             $tm-red-darker;
+$navbar-default-link-color:                $navbar-default-color;
+$navbar-default-link-hover-color:          $navbar-default-color;
+$navbar-default-link-hover-bg:             $tm-gold-dark;
 $navbar-default-link-active-color:         white;
-$navbar-default-link-active-bg:            $tm-red-darker;
+$navbar-default-link-active-bg:            $tm-sienna;
 
 // Navbar toggle
-$navbar-default-toggle-hover-bg:           $tm-blue-darker;
-$navbar-default-toggle-icon-bar-bg:        $tm-white;
-$navbar-default-toggle-border-color:       $tm-white;
+$navbar-default-toggle-hover-bg:           $tm-gold-dark;
+$navbar-default-toggle-icon-bar-bg:        $tm-red-dark;
+$navbar-default-toggle-border-color:       $tm-red-dark;
 
 // END CUSTOMIZATIONS

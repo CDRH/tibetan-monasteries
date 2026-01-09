@@ -65,10 +65,10 @@ h1 {
 // ===========
 
 #body_wrapper {
-  border-top: 12px solid $tm-red-dark;
   display: flex;
   flex-direction: column;
   min-height: 100vh; 
+  overflow-x: hidden;
 
   .main-content {
     flex-grow: 1;
@@ -80,7 +80,6 @@ h1 {
 
 #header {
   background-color: $tm-gold-dark;
-  border-top: 3px solid #4c1818;
 
   .site-banner {
     display: flex;
@@ -92,7 +91,7 @@ h1 {
       flex-grow: 1;
 
       img {
-        height: 100%;
+        height: calc(100% + 100px);
       }
     }
 
@@ -164,23 +163,52 @@ h1 {
   }
 }
 
-// Orchid navbar fixes
-
+// Navbar
 #header {
-  .navbar {
-    border: none;
+  .navbar-default {
     font-family: $font-family-sans-serif;
+    margin-bottom: 15px;
 
+    .navbar-toggle {
+      border-width: 2px;
+    }
+
+    .navbar-nav {
+
+      > li > a {
+        font-weight: 500;
+
+        &:hover {
+          box-shadow: inset 0px 0px 10px rgba(173, 93, 34, 0.75);
+        }
+      }
+
+      > li.active > a {
+        box-shadow: inset 0px 0px 25px rgba(96, 47, 11, 0.5);
+      }
+    }
+
+  // Orchid navbar fixes
+    border: none;
   }
+
 }
 
-@media screen and (min-width: 768px) {
-  // Boptstrap navbar fixes
 
+// Bootstrap navbar fixes
+
+@media screen and (min-width: 768px) {
   #header .navbar-nav {
     display: flex;
     float: initial;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1999px) {
+  .navbar-default .navbar-nav > li > a {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
