@@ -1,24 +1,24 @@
 <div class="site-banner">
-    <div class="header-left">
-      <%= image_tag 'header-left-lg.svg', alt: "", role: "presentation" %>
-    </div>
-    <div class="site-title-container">
-      <%= link_to home_path do %>
-        <div class="h1">
-          <% if I18n.exists?("general.project_name", locale) %>
-            <div class="site-title">
-              <%= t "general.project_name", default: "Add project name to locale file" %>
-            </div>
-          <% end %>
-          <% if I18n.exists?("general.project_subtitle", locale) %>
-            <small class="site-subtitle">
-              <%= t "general.project_subtitle", default: "Add project subtitle to locale file" %>
-            </small>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+  <div class="header-left">
+    <%= image_tag 'header-left.svg', alt: "", role: "presentation" %>
+  </div>
+  <div class="site-title-container">
+    <%= link_to home_path do %>
+      <div class="h1">
+        <% if I18n.exists?("general.project_name", locale) %>
+          <div class="site-title">
+            <%= t "general.project_name", default: "Add project name to locale file" %>
+          </div>
+        <% end %>
+        <% if I18n.exists?("general.project_subtitle", locale) %>
+          <small class="site-subtitle">
+            <%= t "general.project_subtitle", default: "Add project subtitle to locale file" %>
+          </small>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <div class="header-right">
-    <%= image_tag 'header-right-lg.svg', alt: "", role: "presentation" %>
+    <%= image_tag 'header-right.svg', alt: "", role: "presentation" %>
   </div>
 </div>
