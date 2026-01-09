@@ -101,13 +101,15 @@ figure img {
 
 #header {
   background-color: $tm-gold-dark;
+  border-bottom: 1px solid rgb(157, 112, 15);
+  box-shadow: 0px 0px 7px rgb(74, 31, 0);
   position: relative;
   z-index: 1;
 
   .site-banner {
     display: flex;
     justify-content: center;
-    height: 16rem;
+    height: 18rem;
 
     .header-left, 
     .header-right {
@@ -188,6 +190,9 @@ figure img {
 
 // Navbar
 #header {
+  box-shadow: 0px 0px 20px rgba(0,0,0,1);
+
+
   .navbar-default {
     font-family: $font-family-sans-serif;
     margin-bottom: 15px;
@@ -238,23 +243,8 @@ figure img {
 // Main 
 // ========
 
-.main-content {
-
-  .lintel {
-    background: rgba(255, 255, 255 ,0.15);
-    border-top: 1px solid rgb(199, 147, 35);
-    box-shadow: inset 0px 6px 5px -6px rgba(138, 66, 13,0.75);
-    height: 50px;
-    width: 100%;
-  }
-
-  .corbels {
-
-  }
-
-  .corbels + .container {
-    padding-top: 3rem;
-  }
+.main-content > .container {
+  padding-top: 50px;
 }
 
 // Footer 
