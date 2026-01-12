@@ -1,0 +1,102 @@
+<% date_selected = date_selection?(params["date_from"], params["date_to"]) %>
+<% class_in = date_selected ? "in" : "" %>
+<% class_glyphicon = date_selected ? "glyphicon-chevron-down" : "glyphicon-chevron-right" %>
+
+<div class="panel panel-default panel-decoration panel-filter panel-filter-date">
+  <a aria-label="<%= t "search.dates.show_filters", default: "Show Date Filters" %>"
+    class="panel-heading-link"
+    data-toggle="collapse"
+    href="#dates"
+    role="button">
+    <div class="clearfix panel-heading">
+      <div class="panel-decoration-wrapper">
+        <div class="panel-decoration-text">
+          <h3 class="panel-title">
+            <%= t "search.dates.date", default: "Date" %>
+          </h3>
+        </div>
+        <div class="panel-decoration-icon">
+          <span class="glyphicon <%= class_glyphicon %>" aria-hidden="true"></span>
+          </div>
+        <div class="corbel">
+          <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+            <g id="Layer_1-2" data-name="Layer 1">
+              <path class="cls-1" d="M0,50V0h50v6.25c0,1.15-.93,2.08-2.08,2.08h-2.41c-2.03,0-3.78,1.46-4.11,3.47-1.76,10.88-11.77,12.79-15.22,13.13-.66.06-1.18.59-1.25,1.25-.34,3.46-2.25,13.47-13.13,15.22-2,.32-3.47,2.08-3.47,4.11v2.41c0,1.15-.93,2.08-2.08,2.08H0Z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </a>
+  <div class="panel-body collapse <%= class_in %>" id="dates">
+    <%= form_tag prefix_path(route_path), method: "get" do %>
+    <div class="clear-date-filter">
+        <% if date_selection?(params["date_from"], params["date_to"]) %>
+          <%= link_to prefix_path(route_path, clear_dates_params),
+            class: "pull-right btn btn-default btn-xs",
+            "aria-label": t("search.dates.clear_filter",
+            default: "Clear Date Filter"), rel: "nofollow", role: "button",
+            title: "Clear Date Filter" do %>
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          <% end %>
+        <% end %>
+      </div>
+    <%# date from %>
+    <%= field_set_tag t("search.dates.date_from_label", default: "Date From"), class: "form-group form-inline" do %>
+      <% dfrom = params["date_from"] ? params["date_from"] : [] %>
+
+
+        <%= text_field_tag "date_from[]", dfrom[0], id: "date_from_year",
+          class: "form-control input-sm", placeholder: DATE_FIRST[0],
+          maxlength: 4, size: 4, title: "From Year",
+          "aria-label": t("search.dates.from_year", default: "From Year") %>
+        <%= text_field_tag "date_from[]", dfrom[1], id: "date_from_month",
+          class: "form-control input-sm", placeholder: DATE_FIRST[1],
+          maxlength: 2, size: 2, title: "From Month",
+          "aria-label": t("search.dates.from_month", default: "From Month") %>
+        <%= text_field_tag "date_from[]", dfrom[2], id: "date_from_day",
+          class: "form-control input-sm", placeholder: DATE_FIRST[2],
+          maxlength: 2, size: 2, title: "From Day",
+          "aria-label": t("search.dates.from_day", default: "From Day") %>
+      <% end %> <%# end fieldset Date Form %>
+      
+      <%# date to %>
+      <%= field_set_tag t("search.dates.date_to_label", default: "Date To"), class: "form-group form-inline" do %>
+        <div class="form-group form-inline">
+          <% dto = params["date_to"] ? params["date_to"] : [] %>
+          <%= text_field_tag "date_to[]", dto[0], id: "date_to_year",
+            class: "form-control input-sm", placeholder: DATE_LAST[0],
+            maxlength: 4, size: 4, title: "To Year",
+            "aria-label": t("search.dates.to_year", default: "To Year") %>
+          <%= text_field_tag "date_to[]", dto[1], id: "date_to_month", 
+            class: "form-control input-sm", placeholder: DATE_LAST[1],
+            maxlength: 2, size: 2, title: "To Month",
+            "aria-label": t("search.dates.to_month", default: "To Month") %>
+          <%= text_field_tag "date_to[]", dto[2], id: "date_to_day", 
+            class: "form-control input-sm", placeholder: DATE_LAST[2],
+            maxlength: 2, size: 2, title: "To Day",
+            "aria-label": t("search.dates.to_day", default: "To Day") %>
+        </div>
+        <%= render_overridable("hidden_fields") %>
+        <%= hidden_field_tag(:q, params["q"]) %>
+      <% end %><%# end fieldset Date To %>
+      <div class="clearfix">
+        <%= submit_tag t("search.dates.submit", default: "Filter"),
+          class: "btn btn-primary buffer-right-sm",
+          name: nil, role: "button",
+          data: { disable_with: false }
+        %>
+        <button type="button" class="btn btn-link glyphicon glyphicon-question-sign pull-right"
+          data-toggle="collapse" data-target="#date_help"
+          aria-expanded="false" aria-controls="date_help"
+          aria-label="<%= t "search.dates.help", default: "Date Filter Help" %>"
+          title="<%= t "search.dates.help", default: "Date Filter Help" %>">
+        </button>
+      </div>
+    <% end %><%# end form %>
+
+    <div id="date_help" class="collapse">
+      <%= render_overridable("items/date_filter_help", "help") %>
+    </div>
+  </div>
+</div>

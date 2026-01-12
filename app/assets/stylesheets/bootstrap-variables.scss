@@ -3,30 +3,9 @@ $bootstrap-sass-asset-helper: false !default;
 // Variables
 // --------------------------------------------------
 
-
-//== Colors
+//== Custom Colors
 //
-//## Gray and brand colors for use across Bootstrap.
-
-$gray-base:              #030404 !default;
-$gray-darker:            lighten($gray-base, 5%) !default; // #222
-$gray-dark:              lighten($gray-base, 13.5%) !default;   // #333
-$gray:                   lighten($gray-base, 20%) !default; // #555
-$gray-light:             lighten($gray-base, 33.5%) !default; // #777
-$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
-
-$light-base:            rgb(248, 246, 239); // #eef2f4 !default;
-$light-lighter:         lighten($light-base, 5%);// lighten($light-base, 11%);
-
-$brand-primary:         #0f2f87 !default; //dark blue
-$brand-success:         #3c9d64 !default; //green old #5A9D76
-$brand-info:            #447984 !default; //blue
-$brand-warning:         #FAE579 !default; //yellow
-$brand-danger:          #6F787B !default; //gray
-
-$nav-accent:            #f8f8f8 !default;
-
-// BEGIN CUSTOMIZATIONS:
+// Colors specific to the Tibetan Monasteries site design
 
 $tm-blue: rgb(70, 86, 128);
 $tm-blue-dark: rgb(59, 74, 113);
@@ -36,6 +15,7 @@ $tm-gray-darker: rgb(28, 26, 26);
 $tm-gray: rgb(131, 122, 105);
 $tm-gray-light: rgb(165, 156, 156);
 $tm-gray-lighter: rgb(226, 223, 223);
+$tm-green: rgb(46, 132, 81);
 $tm-gold: rgb(248, 199, 53);
 $tm-gold-dark: rgb(223, 156, 13);
 $tm-red: rgb(168, 25, 36);
@@ -63,7 +43,27 @@ $tm-white: rgb(255, 251, 252);
   --tm-white-rgb: 255, 251, 252;
 }
 
-// END CUSTOMIZATIONS
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:              #030404 !default;
+$gray-darker:            lighten($gray-base, 5%) !default; // #222
+$gray-dark:              lighten($gray-base, 13.5%) !default;   // #333
+$gray:                   lighten($gray-base, 20%) !default; // #555
+$gray-light:             lighten($gray-base, 33.5%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$light-base:            rgb(249, 248, 244); // rgb(248, 246, 239); // #eef2f4 !default;
+$light-lighter:         lighten($light-base, 5%);
+
+$brand-primary:         $tm-blue-dark !default; // #0f2f87 !default; //dark blue
+$brand-success:         $tm-green !default; // #3c9d64 !default; //green old #5A9D76
+$brand-info:            #447984 !default; //blue
+$brand-warning:         $tm-gold !default; // #FAE579 !default; //yellow
+$brand-danger:          #6F787B !default; //gray
+
+$nav-accent:            #f8f8f8 !default;
 
 //== Scaffolding
 //
