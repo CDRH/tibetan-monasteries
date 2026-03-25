@@ -13,7 +13,7 @@ to docs/search_preset.md %>
 <h1><%= @content_label || @title %></h1>
 <%= render "#{params[:controller]}/#{params[:action]}_intro" %>
 
-<div class="search-form search-preset search-preset-<%= @preset_class %>">
+<div class="search_form search-preset search-preset-<%= @preset_class %>">
   <%= render_overridable("items", "search_box") %>
 
   <div class="row">
