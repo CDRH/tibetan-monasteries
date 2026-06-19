@@ -1,0 +1,877 @@
+
+<h2></h2>
+
+<p>Below can be found the results of running the centrality measures on this site's data (as ingested into Neo4j), using the NetworkX plugin. Figures and Monasteries are analyzed in turn. Then results are filtered for locations outside Tibet, Kham, and Amdo, then by the relationships of "student" and "pilgrim."</p>
+<%= image_tag(src="network1.png", alt: "a visualization of the graph, centered on Sakya monastery", height: "50%", width: "50%") %>
+
+<br/>
+<%= image_tag(src="network2.png", alt: "another visualization of the graph, centered on The First Dzogchen Drubwang, Pema Rigdzin", height: "50%", width: "50%") %>
+<pre>URI value: 'neo4j+s://764de818.databases.neo4j.io'
+Username: '764de818'
+Connected to Neo4j database.
+adding monasteries
+adding figures
+adding relationships
+Katz Centrality (Figures):
+1. The First Dzogchen Drubwang, Pema Rigdzin - 0.1596
+2. Chokgyur Lingpa - 0.1509
+3. Dudul Dorje - 0.1247
+4. Jamyang Khyentse Wangpo - 0.1213
+5. Longdol Lama Ngawang Lobzang - 0.1173
+6. Khyenrab Wangchuk Drakpa Zangpo  - 0.1157
+7. Khendro Tsering Chodron - 0.1123
+8. Nyima Drakpa - 0.0981
+9. The Second Dzongsar Khyentse, Jamyang Khyenste Chokyi Lodro - 0.0964
+10. Vanaratna - 0.0961
+11. Khenpo Zhenga Zhenpen Chokyi Nangwa - 0.0911
+12. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 0.0886
+13. Sabzang Mati Panchen Lodro Gyeltsen - 0.0875
+14. Dolpopa Sherab Gyaltsen - 0.0873
+15. Gyeltsabje Darma Rinchen - 0.0859
+16. Pema Rangdol - 0.0847
+17. Menchukhawa Lodro Gyeltsen - 0.0842
+18. Dilgo Khyentse Tashi Peljor - 0.0818
+19. Gaton Ngawang Lekpa - 0.0793
+20. Khenpo Ngawang Pelzang - 0.0786
+
+Betweenness Centrality (Figures):
+1. The First Dzogchen Drubwang, Pema Rigdzin - 0.1288
+2. Chokgyur Lingpa - 0.0879
+3. Dudul Dorje - 0.0636
+4. Khendro Tsering Chodron - 0.0594
+5. Vanaratna - 0.0558
+6. Longdol Lama Ngawang Lobzang - 0.0507
+7. Khyenrab Wangchuk Drakpa Zangpo  - 0.0449
+8. Jamyang Khyentse Wangpo - 0.0443
+9. Pema Rangdol - 0.0327
+10. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 0.0316
+11. The First Samding Dorje Phakmo, Chokyi Dronma - 0.0286
+12. The First Zhamarpa Drakpa Sengge - 0.0272
+13. Dolpopa Sherab Gyaltsen - 0.0266
+14. Menchukhawa Lodro Gyeltsen - 0.0239
+15. Sabzang Mati Panchen Lodro Gyeltsen - 0.0229
+16. Nyima Drakpa - 0.0191
+17. Gyeltsabje Darma Rinchen - 0.0191
+18. Chokle Namgyel - 0.0179
+19. Yeshe Tsogyel - 0.0159
+20. Atisha - 0.0146
+
+Closeness Centrality (Figures):
+1. Kunzang Chokyi Drolma - 1.4851
+2. Go Lotsawa Shonnu Pel - 1.4851
+3. Sonam Peldren - 1.4851
+4. Machik Zhama - 1.4851
+5. Shukseb Jetsun Choying Zangmo - 1.4851
+6. Ani Trinle Chodron - 1.4851
+7. Machik Labdron - 1.4851
+8. The First Dzogchen Drubwang, Pema Rigdzin - 0.4797
+9. Dudul Dorje - 0.4645
+10. Chokgyur Lingpa - 0.4573
+11. Longdol Lama Ngawang Lobzang - 0.4517
+12. Vanaratna - 0.4503
+13. Khendro Tsering Chodron - 0.4476
+14. Menchukhawa Lodro Gyeltsen - 0.4318
+15. Khyenrab Wangchuk Drakpa Zangpo  - 0.4318
+16. Jamyang Khyentse Wangpo - 0.4255
+17. Dolpopa Sherab Gyaltsen - 0.4195
+18. Gyeltsabje Darma Rinchen - 0.4183
+19. Longchenpa Drime Oser - 0.4124
+20. Pema Rangdol - 0.409
+
+Degree Centrality (Figures):
+1. The First Dzogchen Drubwang, Pema Rigdzin - 0.1157
+2. Chokgyur Lingpa - 0.0992
+3. Dudul Dorje - 0.0744
+4. Khyenrab Wangchuk Drakpa Zangpo  - 0.0744
+5. Longdol Lama Ngawang Lobzang - 0.0661
+6. Jamyang Khyentse Wangpo - 0.0661
+7. Khendro Tsering Chodron - 0.0661
+8. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 0.0579
+9. The Second Dzongsar Khyentse, Jamyang Khyenste Chokyi Lodro - 0.0579
+10. Nyima Drakpa - 0.0496
+11. Khenpo Zhenga Zhenpen Chokyi Nangwa - 0.0496
+12. Sabzang Mati Panchen Lodro Gyeltsen - 0.0496
+13. Vanaratna - 0.0496
+14. The First Samding Dorje Phakmo, Chokyi Dronma - 0.0413
+15. The Second Changkya, Ngawang Lobzang Choden - 0.0413
+16. Dilgo Khyentse Tashi Peljor - 0.0413
+17. Pema Rangdol - 0.0413
+18. Dolpopa Sherab Gyaltsen - 0.0413
+19. Ngawang Tsültrim - 0.0331
+20. The First Dodrubchen, Jigme Trinle Wozer - 0.0331
+
+Load Centrality (Figures):
+1. The First Dzogchen Drubwang, Pema Rigdzin - 0.1274
+2. Chokgyur Lingpa - 0.0814
+3. Dudul Dorje - 0.0612
+4. Khendro Tsering Chodron - 0.0566
+5. Vanaratna - 0.0539
+6. Longdol Lama Ngawang Lobzang - 0.0479
+7. Jamyang Khyentse Wangpo - 0.0445
+8. Khyenrab Wangchuk Drakpa Zangpo  - 0.0435
+9. Pema Rangdol - 0.0333
+10. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 0.0322
+11. The First Zhamarpa Drakpa Sengge - 0.029
+12. The First Samding Dorje Phakmo, Chokyi Dronma - 0.0284
+13. Dolpopa Sherab Gyaltsen - 0.0265
+14. Menchukhawa Lodro Gyeltsen - 0.0237
+15. Sabzang Mati Panchen Lodro Gyeltsen - 0.0221
+16. Nyima Drakpa - 0.0185
+17. Chokle Namgyel - 0.0182
+18. Gyeltsabje Darma Rinchen - 0.0182
+19. Yeshe Tsogyel - 0.0165
+20. Atisha - 0.0156
+
+Vote Rank (Figures):
+1. The First Dzogchen Drubwang, Pema Rigdzin - 1
+2. Chokgyur Lingpa - 2
+3. Khyenrab Wangchuk Drakpa Zangpo  - 3
+4. Dudul Dorje - 4
+5. Khendro Tsering Chodron - 5
+6. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 6
+7. The First Samding Dorje Phakmo, Chokyi Dronma - 7
+8. Sabzang Mati Panchen Lodro Gyeltsen - 8
+9. Ngawang Tsültrim - 9
+10. The Second Dzongsar Khyentse, Jamyang Khyenste Chokyi Lodro - 10
+11. Arik Geshe Jampa Gelek Gyeltsen - 11
+12. Vanaratna - 12
+13. Nyo Gyelwa Lhanangpa Sanggye Rinchen - 13
+14. Yeshe Tsogyel - 14
+15. Longdol Lama Ngawang Lobzang - 15
+16. Gorampa - 16
+17. Jigme Lingpa - 17
+18. 5th Panchen Lama, Lobzang Yeshe - 18
+19. Zhabkar Tsokdruk Rangdrol - 19
+20. Patrul Orgyen Jigme Chokyi Wangpo - 20
+
+Printing results excluding Tibet
+Katz Centrality (Figures):
+1. Nyima Drakpa - 0.0981
+2. Vanaratna - 0.0961
+3. Dolpopa Sherab Gyaltsen - 0.0873
+4. Khenpo Ngawang Pelzang - 0.0786
+5. Khedrup Norzang Gyatso - 0.0638
+6. Atisha - 0.062
+7. Gelongma Pelmo - 0.0426
+8. Ani Trinle Chodron - 0.0414
+9. Shukseb Jetsun Choying Zangmo - 0.0376
+
+Betweenness Centrality (Figures):
+1. Vanaratna - 0.0558
+2. Dolpopa Sherab Gyaltsen - 0.0266
+3. Nyima Drakpa - 0.0191
+4. Atisha - 0.0146
+5. Gelongma Pelmo - 0.0072
+6. Khenpo Ngawang Pelzang - 0.0052
+7. Khedrup Norzang Gyatso - 0.0021
+8. Ani Trinle Chodron - 0.0
+9. Shukseb Jetsun Choying Zangmo - 0.0
+
+Closeness Centrality (Figures):
+1. Shukseb Jetsun Choying Zangmo - 1.4851
+2. Ani Trinle Chodron - 1.4851
+3. Vanaratna - 0.4503
+4. Dolpopa Sherab Gyaltsen - 0.4195
+5. Nyima Drakpa - 0.4034
+6. Atisha - 0.3915
+7. Khedrup Norzang Gyatso - 0.3662
+8. Khenpo Ngawang Pelzang - 0.3653
+
+Degree Centrality (Figures):
+1. Nyima Drakpa - 0.0496
+2. Vanaratna - 0.0496
+3. Dolpopa Sherab Gyaltsen - 0.0413
+4. Khenpo Ngawang Pelzang - 0.0331
+5. Atisha - 0.0248
+6. Khedrup Norzang Gyatso - 0.0165
+7. Gelongma Pelmo - 0.0165
+8. Ani Trinle Chodron - 0.0165
+
+Load Centrality (Figures):
+1. Vanaratna - 0.0539
+2. Dolpopa Sherab Gyaltsen - 0.0265
+3. Nyima Drakpa - 0.0185
+4. Atisha - 0.0156
+5. Gelongma Pelmo - 0.0072
+6. Khenpo Ngawang Pelzang - 0.0048
+7. Khedrup Norzang Gyatso - 0.002
+8. Ani Trinle Chodron - 0.0
+9. Shukseb Jetsun Choying Zangmo - 0.0
+
+Printing results for Amdo
+Katz Centrality (Figures):
+1. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 0.0886
+2. Pema Rangdol - 0.0847
+3. The First Dodrubchen, Jigme Trinle Wozer - 0.0785
+4. Tsongkhapa Lobzang Drakpa - 0.0783
+5. Ngawang Tsültrim - 0.0596
+6. The Third Dodrubchen, Jigme Tenpai Nyima - 0.0573
+7. Rongton Sheja Kunrig - 0.0533
+8. Konchok Sengge - 0.0524
+9. Changkya Rolpai Dorje - 0.0504
+10. Tenth Karmapa, Choying Dorje - 0.0499
+11. Zhabkar Tsokdruk Rangdrol - 0.049
+12. Arik Geshe Jampa Gelek Gyeltsen - 0.0481
+13. Changlung Pelchen Namkha Jigme - 0.0465
+14. Pema Dechen Lingpa - 0.0446
+
+Betweenness Centrality (Figures):
+1. Pema Rangdol - 0.0327
+2. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 0.0316
+3. Ngawang Tsültrim - 0.0144
+4. The First Dodrubchen, Jigme Trinle Wozer - 0.011
+5. Tsongkhapa Lobzang Drakpa - 0.0092
+6. Zhabkar Tsokdruk Rangdrol - 0.0083
+7. Changlung Pelchen Namkha Jigme - 0.0072
+8. Rongton Sheja Kunrig - 0.0065
+9. Tenth Karmapa, Choying Dorje - 0.006
+10. The Third Dodrubchen, Jigme Tenpai Nyima - 0.0048
+11. Arik Geshe Jampa Gelek Gyeltsen - 0.0016
+12. Konchok Sengge - 0.0007
+13. Changkya Rolpai Dorje - 0.0007
+14. The Seventh Zhamarpa Yeshe Nyingpo
+ - 0.0
+
+Closeness Centrality (Figures):
+1. Kunzang Chokyi Drolma - 1.4851
+2. Pema Rangdol - 0.409
+3. The First Dodrubchen, Jigme Trinle Wozer - 0.3947
+4. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 0.3915
+5. Tsongkhapa Lobzang Drakpa - 0.3784
+6. Tenth Karmapa, Choying Dorje - 0.3573
+7. Rongton Sheja Kunrig - 0.3384
+8. The Third Dodrubchen, Jigme Tenpai Nyima - 0.33
+9. Pema Dechen Lingpa - 0.3214
+10. Changlung Pelchen Namkha Jigme - 0.3214
+11. Konchok Sengge - 0.3179
+12. Ngawang Tsültrim - 0.3152
+13. Changkya Rolpai Dorje - 0.306
+
+Degree Centrality (Figures):
+1. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 0.0579
+2. Pema Rangdol - 0.0413
+3. Ngawang Tsültrim - 0.0331
+4. The First Dodrubchen, Jigme Trinle Wozer - 0.0331
+5. Tsongkhapa Lobzang Drakpa - 0.0331
+6. Arik Geshe Jampa Gelek Gyeltsen - 0.0248
+7. Zhabkar Tsokdruk Rangdrol - 0.0248
+8. The Third Dodrubchen, Jigme Tenpai Nyima - 0.0248
+9. Konchok Sengge - 0.0165
+10. Tenth Karmapa, Choying Dorje - 0.0165
+11. Changkya Rolpai Dorje - 0.0165
+12. Rongton Sheja Kunrig - 0.0165
+13. Changlung Pelchen Namkha Jigme - 0.0165
+14. Kunzang Chokyi Drolma - 0.0083
+
+Load Centrality (Figures):
+1. Pema Rangdol - 0.0333
+2. The First Jamyang Zhepa, Jamyang Zhepai Dorje - 0.0322
+3. Ngawang Tsültrim - 0.0144
+4. The First Dodrubchen, Jigme Trinle Wozer - 0.0111
+5. Tsongkhapa Lobzang Drakpa - 0.0089
+6. Zhabkar Tsokdruk Rangdrol - 0.0085
+7. Rongton Sheja Kunrig - 0.0074
+8. Changlung Pelchen Namkha Jigme - 0.0072
+9. Tenth Karmapa, Choying Dorje - 0.0064
+10. The Third Dodrubchen, Jigme Tenpai Nyima - 0.0051
+11. Arik Geshe Jampa Gelek Gyeltsen - 0.0027
+12. Changkya Rolpai Dorje - 0.0009
+13. Konchok Sengge - 0.0008
+14. The Seventh Zhamarpa Yeshe Nyingpo
+ - 0.0
+
+Printing results for Kham
+Katz Centrality (Figures):
+1. Chokgyur Lingpa - 0.1509
+2. Dudul Dorje - 0.1247
+3. Jamyang Khyentse Wangpo - 0.1213
+4. Longdol Lama Ngawang Lobzang - 0.1173
+5. Khendro Tsering Chodron - 0.1123
+6. Nyima Drakpa - 0.0981
+7. The Second Dzongsar Khyentse, Jamyang Khyenste Chokyi Lodro - 0.0964
+8. Khenpo Zhenga Zhenpen Chokyi Nangwa - 0.0911
+9. Dilgo Khyentse Tashi Peljor - 0.0818
+10. Gaton Ngawang Lekpa - 0.0793
+11. Khenpo Ngawang Pelzang - 0.0786
+12. Mipham - 0.0711
+13. Namcho Mingyur Dorje - 0.0622
+14. Jamgön Kongtrul Lodrö Thayé - 0.0619
+15. The Second Zhechen Rabjam, Gyurme Kunzang Namgyel - 0.0595
+16. Tenth Ganden Tripa, Yeshe Zangpo - 0.0584
+17. Patrul Orgyen Jigme Chokyi Wangpo - 0.0565
+18. Rigdzin Tsewang Norbu - 0.0539
+19. Jikten Gonpo Rinchen Pel - 0.0528
+20. 14th Karmapa Tekchok Dorje - 0.0522
+21. Tsering Wangmo - 0.052
+22. Gorampa - 0.0509
+23. The Ninth Situ, Pema Nyinje Wangpo - 0.0505
+24. Tsangnyon Heruka - 0.0495
+25. Orgyan Tendzin Norbu - 0.0458
+26. The Fourth Shechen Gyaltsab, Pema Namgyel - 0.0453
+27. Pakmodrupa Dorje Gyalpo - 0.043
+
+Betweenness Centrality (Figures):
+1. Chokgyur Lingpa - 0.0879
+2. Dudul Dorje - 0.0636
+3. Khendro Tsering Chodron - 0.0594
+4. Longdol Lama Ngawang Lobzang - 0.0507
+5. Jamyang Khyentse Wangpo - 0.0443
+6. Nyima Drakpa - 0.0191
+7. The Second Dzongsar Khyentse, Jamyang Khyenste Chokyi Lodro - 0.0127
+8. Rigdzin Tsewang Norbu - 0.0127
+9. Mipham - 0.0118
+10. Khenpo Zhenga Zhenpen Chokyi Nangwa - 0.0117
+11. Patrul Orgyen Jigme Chokyi Wangpo - 0.0106
+12. Gorampa - 0.0099
+13. Namcho Mingyur Dorje - 0.0086
+14. Dilgo Khyentse Tashi Peljor - 0.0076
+15. Gaton Ngawang Lekpa - 0.0075
+16. Pakmodrupa Dorje Gyalpo - 0.0072
+17. Tsering Wangmo - 0.0072
+18. Jikten Gonpo Rinchen Pel - 0.0072
+19. Khenpo Ngawang Pelzang - 0.0052
+20. Tsangnyon Heruka - 0.0039
+21. Orgyan Tendzin Norbu - 0.0033
+22. 14th Karmapa Tekchok Dorje - 0.0013
+23. Tenth Ganden Tripa, Yeshe Zangpo - 0.0007
+24. The Second Zhechen Rabjam, Gyurme Kunzang Namgyel - 0.0007
+25. Jamgön Kongtrul Lodrö Thayé - 0.0004
+26. The Ninth Situ, Pema Nyinje Wangpo - 0.0001
+27. The Fourth Shechen Gyaltsab, Pema Namgyel - 0.0
+
+Closeness Centrality (Figures):
+1. Dudul Dorje - 0.4645
+2. Chokgyur Lingpa - 0.4573
+3. Longdol Lama Ngawang Lobzang - 0.4517
+4. Khendro Tsering Chodron - 0.4476
+5. Jamyang Khyentse Wangpo - 0.4255
+6. Nyima Drakpa - 0.4034
+7. Gaton Ngawang Lekpa - 0.3854
+8. Mipham - 0.3755
+9. Khenpo Zhenga Zhenpen Chokyi Nangwa - 0.3671
+10. Khenpo Ngawang Pelzang - 0.3653
+11. Dilgo Khyentse Tashi Peljor - 0.359
+12. 14th Karmapa Tekchok Dorje - 0.3582
+13. The Second Zhechen Rabjam, Gyurme Kunzang Namgyel - 0.3522
+14. The Second Dzongsar Khyentse, Jamyang Khyenste Chokyi Lodro - 0.3522
+15. Namcho Mingyur Dorje - 0.3488
+16. Tenth Ganden Tripa, Yeshe Zangpo - 0.348
+17. Jikten Gonpo Rinchen Pel - 0.3338
+18. Patrul Orgyen Jigme Chokyi Wangpo - 0.33
+19. Tsering Wangmo - 0.3293
+20. Rigdzin Tsewang Norbu - 0.3285
+21. Jamgön Kongtrul Lodrö Thayé - 0.3228
+22. The Ninth Situ, Pema Nyinje Wangpo - 0.3112
+23. The Fourth Shechen Gyaltsab, Pema Namgyel - 0.3079
+24. Gorampa - 0.3073
+25. Orgyan Tendzin Norbu - 0.3073
+26. Tsangnyon Heruka - 0.3016
+27. Pakmodrupa Dorje Gyalpo - 0.2886
+
+Degree Centrality (Figures):
+1. Chokgyur Lingpa - 0.0992
+2. Dudul Dorje - 0.0744
+3. Longdol Lama Ngawang Lobzang - 0.0661
+4. Jamyang Khyentse Wangpo - 0.0661
+5. Khendro Tsering Chodron - 0.0661
+6. The Second Dzongsar Khyentse, Jamyang Khyenste Chokyi Lodro - 0.0579
+7. Nyima Drakpa - 0.0496
+8. Khenpo Zhenga Zhenpen Chokyi Nangwa - 0.0496
+9. Dilgo Khyentse Tashi Peljor - 0.0413
+10. Khenpo Ngawang Pelzang - 0.0331
+11. Namcho Mingyur Dorje - 0.0331
+12. Gaton Ngawang Lekpa - 0.0331
+13. Jikten Gonpo Rinchen Pel - 0.0248
+14. Rigdzin Tsewang Norbu - 0.0248
+15. Patrul Orgyen Jigme Chokyi Wangpo - 0.0248
+16. Mipham - 0.0248
+17. Tsangnyon Heruka - 0.0248
+18. Gorampa - 0.0248
+19. Jamgön Kongtrul Lodrö Thayé - 0.0248
+20. Tsering Wangmo - 0.0165
+21. The Ninth Situ, Pema Nyinje Wangpo - 0.0165
+22. Tenth Ganden Tripa, Yeshe Zangpo - 0.0165
+23. 14th Karmapa Tekchok Dorje - 0.0165
+24. The Second Zhechen Rabjam, Gyurme Kunzang Namgyel - 0.0165
+25. Pakmodrupa Dorje Gyalpo - 0.0165
+26. Orgyan Tendzin Norbu - 0.0165
+
+Load Centrality (Figures):
+1. Chokgyur Lingpa - 0.0814
+2. Dudul Dorje - 0.0612
+3. Khendro Tsering Chodron - 0.0566
+4. Longdol Lama Ngawang Lobzang - 0.0479
+5. Jamyang Khyentse Wangpo - 0.0445
+6. Nyima Drakpa - 0.0185
+7. Mipham - 0.0141
+8. Rigdzin Tsewang Norbu - 0.0131
+9. The Second Dzongsar Khyentse, Jamyang Khyenste Chokyi Lodro - 0.0128
+10. Khenpo Zhenga Zhenpen Chokyi Nangwa - 0.0118
+11. Patrul Orgyen Jigme Chokyi Wangpo - 0.0107
+12. Gorampa - 0.0104
+13. Namcho Mingyur Dorje - 0.009
+14. Dilgo Khyentse Tashi Peljor - 0.0087
+15. Gaton Ngawang Lekpa - 0.0074
+16. Jikten Gonpo Rinchen Pel - 0.0072
+17. Pakmodrupa Dorje Gyalpo - 0.0072
+18. Tsering Wangmo - 0.0072
+19. Khenpo Ngawang Pelzang - 0.0048
+20. Tsangnyon Heruka - 0.0046
+21. Orgyan Tendzin Norbu - 0.004
+22. 14th Karmapa Tekchok Dorje - 0.0017
+23. The Second Zhechen Rabjam, Gyurme Kunzang Namgyel - 0.0009
+24. Tenth Ganden Tripa, Yeshe Zangpo - 0.0006
+25. Jamgön Kongtrul Lodrö Thayé - 0.0004
+26. The Ninth Situ, Pema Nyinje Wangpo - 0.0003
+27. The Fourth Shechen Gyaltsab, Pema Namgyel - 0.0
+
+Katz Centrality (Monasteries):
+1. Sakya - 0.2119
+2. Samye - 0.1731
+3. Sangpu - 0.1508
+4. Dzogchen - 0.1422
+5. Drepung - 0.13
+6. Tsurphu - 0.1163
+7. Ganden - 0.1159
+8. Shechen - 0.1144
+9. Tashilhunpo - 0.1105
+10. Katok - 0.1071
+11. Sera - 0.1017
+12. Pelpung - 0.0992
+13. Dzongsar - 0.099
+14. Dorje Drak - 0.0894
+15. Mindroling - 0.0883
+16. Ngor - 0.0875
+17. Jonang - 0.0873
+18. Pelyul - 0.0842
+19. Sera Me - 0.076
+20. Lhundrubteng - 0.0749
+
+Betweenness Centrality (Monasteries):
+1. Sakya - 0.1962
+2. Samye - 0.1503
+3. Sangpu - 0.081
+4. Dzogchen - 0.0786
+5. Tsurphu - 0.067
+6. Jonang - 0.0533
+7. Drepung - 0.0514
+8. Tashilhunpo - 0.0399
+9. Katok - 0.0393
+10. Ganden - 0.0371
+11. Drigung - 0.0313
+12. Sera - 0.031
+13. Dorje Drak - 0.0299
+14. Mindroling - 0.029
+15. Shechen - 0.0229
+16. Lhasa Tsuklakhang - 0.0202
+17. Ngor - 0.0195
+18. Sera Me - 0.0192
+19. Nyetang Drolma Lhakang - 0.019
+20. Densatil - 0.0174
+
+Closeness Centrality (Monasteries):
+1. Kharta Tarpaling - 1.5106
+2. Shukchung Monastery - 1.5106
+3. Ya Nga Chamda Ganden Khacho Ling - 1.5106
+4. Yangpachen - 1.5106
+5. Alchi - 1.5106
+6. Zangri Kangmar - 1.0071
+7. Taser - 1.0071
+8. Ru Gonsar - 1.0071
+9. Dingri Langkhor - 1.0071
+10. Samye - 0.5087
+11. Sakya - 0.484
+12. Tsurphu - 0.4703
+13. Sangpu - 0.4373
+14. Dzogchen - 0.4285
+15. Pelyul - 0.4249
+16. Katok - 0.4166
+17. Mindroling - 0.4154
+18. Drigung - 0.412
+19. Dorje Drak - 0.4097
+20. Drepung - 0.4097
+
+Degree Centrality (Monasteries):
+1. Sakya - 0.1913
+2. Samye - 0.1304
+3. Sangpu - 0.1304
+4. Dzogchen - 0.113
+5. Drepung - 0.1043
+6. Ganden - 0.0957
+7. Tashilhunpo - 0.0957
+8. Shechen - 0.087
+9. Tsurphu - 0.0783
+10. Katok - 0.0696
+11. Sera - 0.0696
+12. Jonang - 0.0696
+13. Pelpung - 0.0609
+14. Dorje Drak - 0.0522
+15. Mindroling - 0.0522
+16. Kailash - 0.0522
+17. Ngor - 0.0522
+18. Dzongsar - 0.0522
+19. Pelyul - 0.0435
+20. Nyetang Drolma Lhakang - 0.0435
+
+Load Centrality (Monasteries):
+1. Sakya - 0.1855
+2. Samye - 0.1393
+3. Sangpu - 0.078
+4. Dzogchen - 0.0777
+5. Tsurphu - 0.0688
+6. Jonang - 0.054
+7. Drepung - 0.049
+8. Tashilhunpo - 0.0393
+9. Katok - 0.038
+10. Ganden - 0.0379
+11. Drigung - 0.0308
+12. Mindroling - 0.03
+13. Dorje Drak - 0.0292
+14. Sera - 0.029
+15. Shechen - 0.0244
+16. Lhasa Tsuklakhang - 0.0219
+17. Sera Me - 0.0207
+18. Nyetang Drolma Lhakang - 0.02
+19. Ngor - 0.0193
+20. Densatil - 0.0172
+
+Vote Rank (Monasteries):
+1. Sakya - 1
+2. Sangpu - 2
+3. Samye - 3
+4. Dzogchen - 4
+5. Tashilhunpo - 5
+6. Drepung - 6
+7. Shechen - 7
+8. Jonang - 8
+9. Kailash - 9
+10. Ganden - 10
+11. Katok - 11
+12. Tsurphu - 12
+13. Dorje Drak - 13
+14. Pelpung - 14
+15. Nyetang Drolma Lhakang - 15
+16. Sera - 16
+17. Mindroling - 17
+18. Drigung - 18
+19. Ngor - 19
+20. Karma Gon - 20
+
+Printing results excluding Tibet
+Katz Centrality (Monasteries):
+1. Bodhgaya - 0.0493
+2. Boudanath - 0.0489
+3. Lerab Ling - 0.0451
+4. Swayambhunath - 0.0442
+5. Gyume Dratsang (Lower Tantric College) - 0.0427
+6. Paro Taktsang - 0.0404
+7. Yonghe Gong - 0.0398
+8. Drakkar Tashiding - 0.039
+
+Betweenness Centrality (Monasteries):
+1. Bodhgaya - 0.0143
+2. Boudanath - 0.0074
+3. Swayambhunath - 0.0011
+4. Alchi - 0.0
+5. Chagri - 0.0
+6. Hemis - 0.0
+7. Yonghe Gong - 0.0
+8. Gyume Dratsang (Lower Tantric College) - 0.0
+
+Closeness Centrality (Monasteries):
+1. Alchi - 1.5106
+2. Bodhgaya - 0.3519
+3. Lerab Ling - 0.3502
+4. Gyume Dratsang (Lower Tantric College) - 0.3155
+5. Paro Taktsang - 0.3077
+6. Boudanath - 0.3046
+7. Swayambhunath - 0.2827
+8. Drakkar Tashiding - 0.2744
+
+Degree Centrality (Monasteries):
+1. Boudanath - 0.0261
+2. Swayambhunath - 0.0174
+3. Bodhgaya - 0.0174
+4. Paro Taktsang - 0.0087
+5. Chobor - 0.0087
+6. Lerab Ling - 0.0087
+7. Gyume Dratsang (Lower Tantric College) - 0.0087
+8. Alchi - 0.0087
+
+Load Centrality (Monasteries):
+1. Bodhgaya - 0.0143
+2. Boudanath - 0.0088
+3. Swayambhunath - 0.0013
+4. Alchi - 0.0
+5. Chagri - 0.0
+6. Hemis - 0.0
+7. Yonghe Gong - 0.0
+8. Gyume Dratsang (Lower Tantric College) - 0.0
+
+Printing results for Amdo
+Katz Centrality (Monasteries):
+1. Amdo Chubzang - 0.0471
+2. Kumbum Jampa Ling - 0.046
+3. Chone - 0.0398
+4. Dobi Ganden Pelgye Ling - 0.0387
+
+Betweenness Centrality (Monasteries):
+1. Amdo Chubzang - 0.006
+2. Kumbum Jampa Ling - 0.0013
+3. Chone - 0.0
+4. Dobi Ganden Pelgye Ling - 0.0
+
+Closeness Centrality (Monasteries):
+1. Shukchung Monastery - 1.5106
+2. Amdo Chubzang - 0.3294
+3. Kumbum Jampa Ling - 0.279
+
+Degree Centrality (Monasteries):
+1. Kumbum Jampa Ling - 0.0174
+2. Amdo Chubzang - 0.0174
+3. Dobi Ganden Pelgye Ling - 0.0087
+4. Shukchung Monastery - 0.0087
+5. Chone - 0.0087
+
+Load Centrality (Monasteries):
+1. Amdo Chubzang - 0.0067
+2. Kumbum Jampa Ling - 0.0015
+3. Chone - 0.0
+4. Dobi Ganden Pelgye Ling - 0.0
+
+Printing results for Kham
+Katz Centrality (Monasteries):
+1. Dzogchen - 0.1422
+2. Shechen - 0.1144
+3. Pelpung - 0.0992
+4. Tsadra Rinchen Drak - 0.0673
+5. Chamdo Jampa Ling - 0.0661
+6. Jyekundo Dondrub Ling - 0.0564
+7. Khyungtak - 0.0451
+8. Garje - 0.0401
+9. Lhatel Rinchen Ling - 0.0395
+
+Betweenness Centrality (Monasteries):
+1. Dzogchen - 0.0786
+2. Shechen - 0.0229
+3. Pelpung - 0.0133
+4. Chamdo Jampa Ling - 0.0097
+5. Jyekundo Dondrub Ling - 0.0028
+6. Tsadra Rinchen Drak - 0.0027
+7. Garje - 0.0
+8. Lhatel Rinchen Ling - 0.0
+
+Closeness Centrality (Monasteries):
+1. Ya Nga Chamda Ganden Khacho Ling - 1.5106
+2. Dzogchen - 0.4285
+3. Pelpung - 0.3977
+4. Shechen - 0.3946
+5. Chamdo Jampa Ling - 0.3915
+6. Tsadra Rinchen Drak - 0.3895
+7. Khyungtak - 0.3502
+8. Jyekundo Dondrub Ling - 0.3454
+9. Garje - 0.2876
+10. Lhatel Rinchen Ling - 0.2759
+
+Degree Centrality (Monasteries):
+1. Dzogchen - 0.113
+2. Shechen - 0.087
+3. Pelpung - 0.0609
+4. Tsadra Rinchen Drak - 0.0261
+5. Jyekundo Dondrub Ling - 0.0261
+6. Chamdo Jampa Ling - 0.0261
+7. Lhatel Rinchen Ling - 0.0087
+8. Ya Nga Chamda Ganden Khacho Ling - 0.0087
+9. Garje - 0.0087
+
+Load Centrality (Monasteries):
+1. Dzogchen - 0.0777
+2. Shechen - 0.0244
+3. Pelpung - 0.0126
+4. Chamdo Jampa Ling - 0.0098
+5. Jyekundo Dondrub Ling - 0.0039
+6. Tsadra Rinchen Drak - 0.0026
+7. Garje - 0.0
+8. Lhatel Rinchen Ling - 0.0
+
+analyzing student relationships
+Printing results for relationship Student
+integer division or modulo by zero
+> /Users/williamdewey/Development/code/repos/data/tibetan_monasteries/scripts/python/neo4j_network_analysis/neo4j_analysis.py(239)analyze_network()
+-> result[f"Betweenness Centrality ({label})"] = "error for betweenness centrality"
+(Pdb) float division by zero
+> /Users/williamdewey/Development/code/repos/data/tibetan_monasteries/scripts/python/neo4j_network_analysis/neo4j_analysis.py(267)analyze_network()
+-> result[f"Degree Centrality ({label})"] = "error for degree centrality"
+(Pdb) Katz Centrality () with Student relationships:
+1. Jamyang Khyentse Wangpo - 0.0971
+2. Sangpu - 0.0946
+3. Sakya - 0.0889
+4. Shechen - 0.0888
+5. Pelpung - 0.0888
+6. Gyeltsabje Darma Rinchen - 0.0887
+7. Jamgön Kongtrul Lodrö Thayé - 0.0809
+8. Third Karmapa, Rangjung Dorje - 0.0804
+9. Mipham - 0.0791
+10. Chokgyur Lingpa - 0.0791
+11. Tsurphu - 0.0783
+12. Ngawang Tsültrim - 0.078
+13. Sera Me - 0.078
+14. Gorampa - 0.0773
+15. Mindroling - 0.0728
+16. Tsongkhapa Lobzang Drakpa - 0.0726
+17. Sakya Pandita - 0.0726
+18. Rendawa Shonnu Lodro - 0.072
+19. Tsetang - 0.072
+20. Dzogchen - 0.071
+
+Betweenness Centrality () with Student relationships:
+error for betweenness centrality
+
+Closeness Centrality () with Student relationships:
+1. Pelri Osel Tekchenling - 2.0
+2. Gorampa - 2.0
+3. Jigme Lingpa - 2.0
+4. Sera Me - 1.5
+5. Ngawang Tsültrim - 1.5
+6. Ngor - 1.3333
+7. Nalendra - 1.3333
+8. Chone - 1.0
+9. Khedrupje - 1.0
+10. Sakya - 0.75
+11. Jamyang Khyentse Wangpo - 0.7347
+12. Gyeltsabje Darma Rinchen - 0.7059
+13. Sangpu - 0.6207
+14. Shechen - 0.6
+15. Pelpung - 0.6
+16. Rendawa Shonnu Lodro - 0.5538
+17. Mindroling - 0.5455
+18. Tsetang - 0.5294
+19. Third Karmapa, Rangjung Dorje - 0.507
+20. Jamgön Kongtrul Lodrö Thayé - 0.507
+
+Degree Centrality () with Student relationships:
+error for degree centrality
+
+Load Centrality () with Student relationships:
+1. Jamyang Khyentse Wangpo - 0.0033
+2. Sakya - 0.0032
+3. Gyeltsabje Darma Rinchen - 0.003
+4. Sangpu - 0.0026
+5. Shechen - 0.0014
+6. Pelpung - 0.0014
+7. Third Karmapa, Rangjung Dorje - 0.0012
+8. Mipham - 0.0006
+9. Chokgyur Lingpa - 0.0006
+10. Tsurphu - 0.0006
+11. Jamgön Kongtrul Lodrö Thayé - 0.0002
+12. Ngawang Tsültrim - 0.0001
+13. Sera Me - 0.0001
+14. Gorampa - 0.0
+15. Tsongkhapa Lobzang Drakpa - 0.0
+16. Tenth Karmapa, Choying Dorje - 0.0
+17. Sakya Pandita - 0.0
+18. Khedrupje - 0.0
+19. Jigme Lingpa - 0.0
+20. Shukseb Jetsun Choying Zangmo - 0.0
+
+Vote Rank () with Student relationships:
+1. Jamyang Khyentse Wangpo - 1
+2. Sangpu - 2
+3. Gorampa - 3
+4. Ngawang Tsültrim - 4
+5. Shechen - 5
+6. Tenth Karmapa, Choying Dorje - 6
+7. Mipham - 7
+8. Jigme Lingpa - 8
+9. Gyeltsabje Darma Rinchen - 9
+10. Chokgyur Lingpa - 10
+11. Sera Me - 11
+12. Sakya - 12
+
+analyzing pilgrim relationships
+Printing results for relationship Pilgrim
+integer division or modulo by zero
+> /Users/williamdewey/Development/code/repos/data/tibetan_monasteries/scripts/python/neo4j_network_analysis/neo4j_analysis.py(239)analyze_network()
+-> result[f"Betweenness Centrality ({label})"] = "error for betweenness centrality"
+(Pdb) float division by zero
+> /Users/williamdewey/Development/code/repos/data/tibetan_monasteries/scripts/python/neo4j_network_analysis/neo4j_analysis.py(267)analyze_network()
+-> result[f"Degree Centrality ({label})"] = "error for degree centrality"
+(Pdb) Katz Centrality () with Pilgrim relationships:
+1. Chokgyur Lingpa - 0.1175
+2. Dorje Drak - 0.076
+3. Drigung - 0.076
+4. Tsurphu - 0.076
+5. Samye - 0.076
+6. Katok - 0.076
+7. Karma Gon - 0.076
+8. Mindroling - 0.076
+9. Shukseb Jetsun Choying Zangmo - 0.0714
+10. Jamyang Khyentse Wangpo - 0.0714
+11. Alchi - 0.0714
+12. Pelpung - 0.0714
+13. Tsongkhapa Lobzang Drakpa - 0.0643
+14. Tenth Karmapa, Choying Dorje - 0.0643
+15. Mipham - 0.0643
+16. Sakya Pandita - 0.0643
+17. Khedrupje - 0.0643
+18. Jamgön Kongtrul Lodrö Thayé - 0.0643
+19. Jigme Lingpa - 0.0643
+20. Gorampa - 0.0643
+
+Betweenness Centrality () with Pilgrim relationships:
+error for betweenness centrality
+
+Closeness Centrality () with Pilgrim relationships:
+1. Chokgyur Lingpa - 2.0
+2. Jamyang Khyentse Wangpo - 2.0
+3. Alchi - 2.0
+4. Pelpung - 2.0
+5. Shukseb Jetsun Choying Zangmo - 2.0
+6. Tsurphu - 1.0769
+7. Dorje Drak - 1.0769
+8. Mindroling - 1.0769
+9. Karma Gon - 1.0769
+10. Katok - 1.0769
+11. Drigung - 1.0769
+12. Samye - 1.0769
+13. Pelri Osel Tekchenling - 0.0
+14. Thirteenth Ganden Tripa, Chokyi Shenyen - 0.0
+15. Jikten Gonpo Rinchen Pel - 0.0
+16. The Ninth Situ, Pema Nyinje Wangpo - 0.0
+17. Gharung - 0.0
+18. Gonlung Jampa Ling - 0.0
+19. Dobi Ganden Pelgye Ling - 0.0
+20. Taklung - 0.0
+
+Degree Centrality () with Pilgrim relationships:
+error for degree centrality
+
+Load Centrality () with Pilgrim relationships:
+1. Chokgyur Lingpa - 0.0008
+2. Tsongkhapa Lobzang Drakpa - 0.0
+3. Tenth Karmapa, Choying Dorje - 0.0
+4. Mipham - 0.0
+5. Sakya Pandita - 0.0
+6. Khedrupje - 0.0
+7. Jamgön Kongtrul Lodrö Thayé - 0.0
+8. Jigme Lingpa - 0.0
+9. Gorampa - 0.0
+10. Ngawang Tsültrim - 0.0
+11. Third Karmapa, Rangjung Dorje - 0.0
+12. Shukseb Jetsun Choying Zangmo - 0.0
+13. Gyeltsabje Darma Rinchen - 0.0
+14. The Seventh Zhamarpa Yeshe Nyingpo
+ - 0.0
+15. Jamyang Khyentse Wangpo - 0.0
+16. Drakpa Gyeltsen - 0.0
+17. Rendawa Shonnu Lodro - 0.0
+18. Longchenpa Drime Oser - 0.0
+19. Rongton Sheja Kunrig - 0.0
+20. Changkya Rolpai Dorje - 0.0
+
+Vote Rank () with Pilgrim relationships:
+1. Chokgyur Lingpa - 1
+2. Shukseb Jetsun Choying Zangmo - 2
+3. Jamyang Khyentse Wangpo - 3
+
+</pre>
