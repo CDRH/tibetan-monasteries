@@ -1,11 +1,25 @@
 
-<h2></h2>
+<h2>Network analysis centrality results</h2>
 
-<p>Below can be found the results of running the centrality measures on this site's data (as ingested into Neo4j), using the NetworkX plugin. Figures and Monasteries are analyzed in turn. Then results are filtered for locations outside Tibet, Kham, and Amdo, then by the relationships of "student" and "pilgrim."</p>
+<p>Below can be found the results of running the centrality measures on this site's data (as ingested into Neo4j), using the NetworkX plugin. Figures and Monasteries are analyzed in turn. Then results are filtered for locations outside Tibet, Kham, and Amdo, then by the relationships of "student" and "pilgrim."
+My ource code can be found <%= link_to "here", "https://github.com/CDRH/data_tibetan-monasteries/blob/network_analysis/scripts/python/neo4j_network_analysis/neo4j_analysis.py" %>. Original inspiration for the method of using NetworkX for Python in conjunction with the Neo4j graph database can be found at <%= link_to "Lasha Dolenjashvili's guide to network analysis with Neo4J", "https://lasha-dolenjashvili.medium.com/introduction-to-network-analysis-with-neo4j-auradb-and-python-%EF%B8%8F-d332c6d41f13" %>. See the NetworkX site for <%= link_to "documentation on centrality measures", "https://networkx.org/documentation/stable/reference/algorithms/centrality.html" %></p>
 <%= image_tag(src="network1.png", alt: "a visualization of the graph, centered on Sakya monastery", height: "50%", width: "50%") %>
 
 <br/>
 <%= image_tag(src="network2.png", alt: "another visualization of the graph, centered on The First Dzogchen Drubwang, Pema Rigdzin", height: "50%", width: "50%") %>
+
+<p>
+An unique feature of this network analysis is that it made use of a bipartite graph, in which figures and monasteries were not connected directly to each other, but there are only connections between figures and monasteries. I attempted to use the "bipartite" features in NetworkX when available for the specific centrality measure, although they did not produce significantly different results.
+</p>
+<p>
+The results of the network analysis were relatively straightforward and predictable when focusing on monasteries. Monasteries with many direct connections to individual figures did well in centrality measures. The most central monasteries correspond closely with the most famous monasteries in each Tibetan Buddhist tradition (Sakya for the Geluk tradition, Dzokchen for the Nyingma tradition), as well as pilgrimage sites revered across the tradition (such as Samye). The visualization of Samye shows this straightforward pattern, it is at the center of a regular web, with numerous incoming connections.
+</p>
+<p>
+The most central figures were more surprising. They did not necessarily correspond to the most famous individuals who were founders of traditions (for instance, Tsongkhapa who foudned the Geluk tradition did not score highly). Instead, figures scored highly who had connections to many different monasteries across traditions. This often characterized figures from the nonsectarian Rimé movement, and some tantric scholars from the Geluk tradition. (However, elite Geluk lamas and scholars tended to have connections within the tradition's own monasteries). The pictured visualization is a graph centered on the First Dzogchen Drubwang, Pema Rigdzin, a Rimé figure who scored highly in many centrality measures. It shows a less regular pattern, indicating connections to disparate parts of the graph. It is possible that better use of Bloom visualization features such as graviety of Neo4j would produce a prettier graph.
+</p>
+<p>
+Using different centrality measures produced broadly similar results, with some subtle differences with the more "weighted" centrality measures like Katz or Closeness compared with simple degree centrality (which just counts the number of incoming connections). The Kalachakra traditions of Jonang had few direct connections, but their figures and moansteries were indirectly influential across the tradition. Disconnected portions of the graph (for instance, some figures in Ladakh) received artificially higher closeness centrality socres due to how NetworkX calculates the score.
+</p>
 <pre>URI value: 'neo4j+s://764de818.databases.neo4j.io'
 Username: '764de818'
 Connected to Neo4j database.
