@@ -23,14 +23,18 @@
         <li class="<%= active?(about_path) %>">
           <%= link_to t("about.title", default: "About"), about_path %>
         </li>
-        <%# documents %>
+        <%# religious figures %>
         <li class="<%= active?(/^#{config.relative_url_root}\/religious_figures/, request.path) %>">
           <%= link_to t("religious_figures.title", default: "Religious figures"), religious_figures_home_path %>
         </li>
 
-        <%# cases %>
+        <%# monasteries %>
         <li class="<%= active?(/^#{config.relative_url_root}\/monasteries/, request.path) %>">
           <%= link_to t("monasteries.title", default: "Monasteries"), monasteries_home_path %>
+        </li>
+
+        <li class="<%= active?(/^#{config.relative_url_root}\/results/, request.path) %>">
+          <%= link_to t("results.title", default: "Network Analysis"), results_path %>
         </li>
 
     </div>
