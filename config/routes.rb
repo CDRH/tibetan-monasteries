@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/about/results', to: "general#results", as: "results"
   scope "/religious_figures", defaults: { section: "religious_figures" } do
     get "/", to: "religious_figures#index", as: :religious_figures_home
     Orchid::Routing.draw(section: "religious_figures", scope: "/religious_figures", routes: ["browse", "browse_facet", "item", "search"])
