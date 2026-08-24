@@ -344,7 +344,7 @@ h1 {
           border: 1px solid transparent;
           display: flex;
           flex-grow: 1;
-          padding-left: 15px;
+          padding: 5px 10px 5px 15px;
         }
 
         .panel-decoration-icon {
@@ -353,6 +353,7 @@ h1 {
           display: flex;
 
           .glyphicon {
+            right: 8px;
             top: 0px;
           }
         }
