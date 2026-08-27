@@ -12,14 +12,14 @@ en:
   #################
   general:
     # footer content with link to CDRH site
-    cdrh_link_html: Created by the <a href="https://cdrh.unl.edu">Center for Digital Research in the Humanities</a>.
+    cdrh_link_html: Created by the <a href="https://cdrh.unl.edu">Center for Digital Research in the Humanities</a> at the <a href="https://www.unl.edu/">University of Nebraska–Lincoln</a>.
     # close a popup window
     close: Close
 
     # Header title
     project_name: Tibetan Monasteries
     # <title>, meta application-name
-    project_shortname: tibetanmonasteries
+    project_shortname: Tibetan Monasteries
     # Header subtitle
     project_subtitle: Religious and Institutional Networks
 
@@ -33,8 +33,10 @@ en:
     # it's recommended that you override it in your config/locales files. If your about
     # page is more involved, please override the about.html.erb template entirely
     contents_html: |-
-      <h3>Research in network analysis</h3><p>The Tibetan monastic system forms a transnational web between local monasteries, national institutions like the Geluk monastic seats, monasteries in other Himalayan states, and rulers and practitioners of other Asian countries. My network analysis to show how networks of practice and scholarship transcended sectarian boundaries. I have conducted network analysis research with the Neo4j graph database and NetworkX plugin for Python.  These tools can show the density of connections, identify the most central monasteries (via centrality measures), and break out interesting characteristics (like geographical location). These tools are used to analyze the interpersonal and monastic networks of the four great traditions and the cross-cutting Rimé movement. I compare the traditions in terms of their geographic spread and transnationality. This paper will be published in a forthcoming chapter in an edited volume. The results of NetworkX centrality analysis can be seen <a href="about/results">here</a>.</p><h3>Copyright</h3><p>This site makes extensive use of metadata from <a href="https://bdrc.io">
-      Buddhist Digital Resource Center</a> and Treasury of Lives. Both of these organizations have released this data into the public domain under the <a href="https://creativecommons.org/public-domain/cc0/">CC0 license</a>. See <a href=https://treasuryoflives.org/terms>Treasury of Live's terms of use</a> and BDRC entries which note that their metadata has been released as CC0.  (However, Treasury of Lives biographies are copyright of the owners and cannot be reproduced without permission.)</p><h3>Credits</h3><p>This project is sponsored by the Center for Digital Research in the Humanities. Thanks to Andy Jewell, Karin Dalziel, and the CDRH Fellows for approving this pilot project and giving me the time to work on it. Kudos to Erin Kay Chambers for graphic design, Greg Tunink for helping to put it on the Rails server, and Jason Bougger and Tomonori Nagata for setting up Baserow, in which I compiled and managed much of the spreadsheet data. </p>
+      <h3>Research in network analysis</h3>
+      <p>The Tibetan monastic system forms a transnational web between local monasteries, national institutions like the Geluk monastic seats, monasteries in other Himalayan states, and rulers and practitioners of other Asian countries. My network analysis to show how networks of practice and scholarship transcended sectarian boundaries. I have conducted network analysis research with the Neo4j graph database and NetworkX plugin for Python.  These tools can show the density of connections, identify the most central monasteries (via centrality measures), and break out interesting characteristics (like geographical location). These tools are used to analyze the interpersonal and monastic networks of the four great traditions and the cross-cutting Rimé movement. I compare the traditions in terms of their geographic spread and transnationality. This paper will be published in a forthcoming chapter in an edited volume. The results of NetworkX centrality analysis can be seen <a href="about/results">here</a>.</p><h3>Copyright</h3><p>This site makes extensive use of metadata from <a href="https://bdrc.io">Buddhist Digital Resource Center</a> and Treasury of Lives. Both of these organizations have released this data into the public domain under the <a href="https://creativecommons.org/public-domain/cc0/">CC0 license</a>. See <a href="https://treasuryoflives.org/terms">Treasury of Lives' terms of use</a> and BDRC entries which note that their metadata has been released as CC0. (However, Treasury of Lives biographies are copyright of the owners and cannot be reproduced without permission.)</p>
+      <h3>Credits</h3>
+      <p>This project is sponsored by the Center for Digital Research in the Humanities. Thanks to Andy Jewell, Karin Dalziel, and the CDRH Fellows for approving this pilot project and giving me the time to work on it. Kudos to Erin Kay Chambers for graphic design, Nikki Gray for review, Greg Tunink for helping to put it on the Rails server, and Jason Bougger and Tomonori Nagata for setting up Baserow, in which I compiled and managed much of the spreadsheet data.</p>
 
   ##########
   # BROWSE #
@@ -109,7 +111,7 @@ en:
     # title text that appears when no search / filters have been applied
     all_items: All Items
     # clearing all search / filters
-    clear_all: Clear Search
+    clear_all: Reset Search
     # clearing only the text search field
     clear_text: Clear Search Text
     dates:
@@ -181,6 +183,7 @@ en:
         helpful.</p>
     filters:
       # clearing filters (not the text search)
+      clear: Clear Filter
       clear_all: Clear Filters
       # label above the filters
       filter_by: Filter by
@@ -195,6 +198,9 @@ en:
     # placeholder for the text search field
     placeholder: Search for...
     results:
+      # for calling these labels without numerical values
+      singular: result
+      plural: results
       # display for number of results when API response is error
       error: Unable to display results
       # how to display number of results when no search / filters have been applied

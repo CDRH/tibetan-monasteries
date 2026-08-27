@@ -1,8 +1,17 @@
 en:
-  #########
-  # ABOUT #
-  #########
-  religious_figures:
-    title: Religious Figures
+  ##################
+  # SEARCH PRESETS #
+  ##################
   monasteries:
     title: Monasteries
+    about_html: |-
+      <p>Tibetan Buddhist monasteries and the figures that are associated with them.</p>
+    # title text that appears when search / filters have been applied
+    search_results: "Monasteries Search Results"
+
+  religious_figures:
+    title: Religious Figures
+    about_html: |-
+      <p>Tibetan religious figures and their association with monasteries.</p>
+    # title text that appears when search / filters have been applied
+    search_results: "Religious Figures Search Results"

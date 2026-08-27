@@ -1,5 +1,11 @@
-<h1><%= t "home.greeting", default: "Welcome" %></h1>
+<div class="homepage-grid">
+  <div class="homepage-text">
+      <h1 class="heading-underline"><%= t "home.greeting", default: "Welcome" %></h1>
+      <p>This project intends to explore the relationships between Tibetan Buddhist religious figures and monasteries and map the social and geographic networks among them. Like many religions, Tibetan Buddhism is divided into sectarian traditions, which differ in practice, philosophy, organization, and history. Their political and educational institutions have historically centered on specific monasteries. For instance the Dalai Lama’s Geluk tradition centered on Ganden, Drepung, and Sera. Prominent religious figures studied and taught at monasteries of their own tradition, but this is not the only relationship figures had with monasteries. Religious figures often visited monasteries of different traditions if they had a reputation for philosophy or certain ritual practices, so their education and influence might span multiple traditions. Monasteries were also centers of pilgrimage and seats of political influence. </p>
+    <p><%= link_to "About the Project, Credits and Acknowledgments", about_path %></p>
+  </div>
+  <div class="homepage-image">
+    <%= image_tag ("padma-samye-chokhor-ling.jpg"), alt: "Monastery entrance gate with ornate metal doors and colorful archway architecture." %>
+  </div>
+</div>
 
-<p>This project intends to explore the relationships between Tibetan Buddhist religious figures and monasteries and map the social and geographic networks among them. Like many religions, Tibetan Buddhism is divided into sectarian traditions, which differ in practice, philosophy, organization, and history. Their political and educational institutions have historically centered on specific monasteries. For instance the Dalai Lama’s Geluk tradition centered on Ganden, Drepung, and Sera. Prominent religious figures studied and taught at monasteries of their own tradition, but this is not the only relationship figures had with monasteries. Religious figures often visited monasteries of different traditions if they had a reputation for philosophy or certain ritual practices, so their education and influence might span multiple traditions. Monasteries were also centers of pilgrimage and seats of political influence. </p>
-
-<%= link_to "About the Project, Credits and Acknowledgments", about_path %>
