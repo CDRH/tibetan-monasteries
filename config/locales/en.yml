@@ -151,7 +151,6 @@ en:
       # search help html, this may need to be recreated per language
       # instead of translated literally due to differences with stemming and grammar
       html: |-
-        <h2 class="sr-only">Search Help</h2>
         <h3>Basic Search</h3>
         <p>Simply enter the word you wish to find and the search engine will
         search for every instance of the word in the journals. For example:
