@@ -26,7 +26,7 @@ default: &default
         flags:
           - search_filter
       type:
-        label: Tradition of Tibetan Buddhism
+        label: Tradition
         flags:
           - search_filter
       spatial.name:
@@ -45,10 +45,10 @@ default: &default
         label: Associated teaching
         flags:
           - search_filter
-      monastery_count_k:
-        label: Number of associated monasteries
-        flags:
-          - search_filter
+#      monastery_count_k:
+#        label: Number of associated monasteries
+#        flags:
+#          - search_filter
 # Add fields for other languages with their language code
 #    es:
 #      category:

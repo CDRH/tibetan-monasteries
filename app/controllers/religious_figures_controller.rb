@@ -6,7 +6,15 @@ class ReligiousFiguresController < ItemsController
 
   def index
     # optional settings
-    @title = t "religious_figures.title"
+    if params["f"].present? && params["q"].present?
+      @title = "#{t "religious_figures.search_results"}: \"#{params["q"]}\" - #{display_filters(params)}"
+    elsif params["q"].present?
+      @title = "#{t "religious_figures.search_results"}: \"#{params["q"]}\""
+    elsif params["f"].present?
+      @title = "#{t "religious_figures.search_results"}: #{display_filters(params)}"
+    else
+      @title = t "religious_figures.title"
+    end
 
     # query to return only cases
     options = params.permit!.deep_dup
@@ -20,6 +28,12 @@ class ReligiousFiguresController < ItemsController
     @route_path = "home_path"
     @facet_limit = @section.present? ? SECTIONS[@section]["api_options"]["facet_limit"] : PUBLIC["api_options"]["facet_limit"]
     render_overridable("items", "search_preset", false)
+  end
+
+    def display_filters(params)
+    if params["f"]
+      params["f"].map { |filter| filter.split("|")[1]}.join(" / ")
+    end
   end
 
 end
