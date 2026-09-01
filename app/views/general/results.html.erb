@@ -2,11 +2,16 @@
 <h2>Network analysis centrality results</h2>
 
 <p>Below can be found the results of running the centrality measures on this site's data (as ingested into Neo4j), using the NetworkX plugin. Figures and Monasteries are analyzed in turn. Then results are filtered for locations outside Tibet, Kham, and Amdo, then by the relationships of "student" and "pilgrim."
-My ource code can be found <%= link_to "here", "https://github.com/CDRH/data_tibetan-monasteries/blob/network_analysis/scripts/python/neo4j_network_analysis/neo4j_analysis.py" %>. Original inspiration for the method of using NetworkX for Python in conjunction with the Neo4j graph database can be found at <%= link_to "Lasha Dolenjashvili's guide to network analysis with Neo4J", "https://lasha-dolenjashvili.medium.com/introduction-to-network-analysis-with-neo4j-auradb-and-python-%EF%B8%8F-d332c6d41f13" %>. See the NetworkX site for <%= link_to "documentation on centrality measures", "https://networkx.org/documentation/stable/reference/algorithms/centrality.html" %></p>
-<%= image_tag(src="network1.png", alt: "a visualization of the graph, centered on Sakya monastery", height: "50%", width: "50%") %>
+My source code can be found <%= link_to "here", "https://github.com/CDRH/data_tibetan-monasteries/blob/network_analysis/scripts/python/neo4j_network_analysis/neo4j_analysis.py" %>. Original inspiration for the method of using NetworkX for Python in conjunction with the Neo4j graph database can be found at <%= link_to "Lasha Dolenjashvili's guide to network analysis with Neo4J", "https://lasha-dolenjashvili.medium.com/introduction-to-network-analysis-with-neo4j-auradb-and-python-%EF%B8%8F-d332c6d41f13" %>. See the NetworkX site for <%= link_to "documentation on centrality measures", "https://networkx.org/documentation/stable/reference/algorithms/centrality.html" %>.</p>
 
-<br/>
-<%= image_tag(src="network2.png", alt: "another visualization of the graph, centered on The First Dzogchen Drubwang, Pema Rigdzin", height: "50%", width: "50%") %>
+<div class="row">
+  <div class="col-md-9 col-lg-6 mt-4 mb-4">
+    <%= image_tag(src="network1.png", alt: "a visualization of the graph, centered on Sakya monastery") %>
+  </div>
+  <div class="col-md-9 col-lg-6 mt-4 mb-4">
+    <%= image_tag(src="network2.png", alt: "another visualization of the graph, centered on The First Dzogchen Drubwang, Pema Rigdzin") %>
+  </div>
+</div>
 
 <p>
 An unique feature of this network analysis is that it made use of a bipartite graph, in which figures and monasteries were not connected directly to each other, but there are only connections between figures and monasteries. I attempted to use the "bipartite" features in NetworkX when available for the specific centrality measure, although they did not produce significantly different results.
