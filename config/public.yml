@@ -94,8 +94,6 @@ default: &default
 #        flags:
 #          - search_filter
 #          - translate
-es_path: http://localhost:9200
-es_index: tibetanmonasteries
 
 test:
   <<: *default
